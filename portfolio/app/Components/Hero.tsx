@@ -17,7 +17,7 @@ const Hero: React.FC<Props> = (props: Props) => {
       <div className="flex flex-col items-center justify-center h-full text-center text-4xl">
         <HeadingText>Saurav Pant </HeadingText>
         <p>
-          <span className="text-xl bg-gradient-to-r text-transparent bg-clip-text from-orange-500 to-yellow-500">
+          <span className="text-xl bg-gradient-to-r text-transparent bg-clip-text from-sky-200 to-blue-500">
             Full Stack Developer
           </span>
         </p>
@@ -32,7 +32,7 @@ const Hero: React.FC<Props> = (props: Props) => {
         transition={{ duration: 1 }}
       >
         <ul className="absolute bottom-4 left-4 flex flex-col gap-4">
-          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-white hover:text-black">
+          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-black">
             <Link
               href="https://github.com/Saurav-Pant"
               target="_blank"
@@ -41,7 +41,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               <FaGithub size={32} />
             </Link>
           </li>
-          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-white hover:text-sky-600">
+          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-black hover:text-sky-600">
             <Link
               href="https://twitter.com/"
               target="_blank"
@@ -50,7 +50,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               <FaTwitter size={32} />
             </Link>
           </li>
-          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-white hover:text-blue-500">
+          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-blue-500">
             <Link
               href="https://www.linkedin.com/in/saurav-pant/"
               target="_blank"

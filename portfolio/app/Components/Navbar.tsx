@@ -72,7 +72,17 @@ const Navbar: React.FC<Props> = (props: Props) => {
         )}
 
         {isOpen && (
-          <motion.div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 ">
+          <motion.div
+            className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 "
+            initial={{ opacity: 0, y: -70 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
             <ul
               className="flex flex-col sm:flex-col justify-center items-center font-light"
               style={{
@@ -83,9 +93,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, y: -70 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
               >
                 <Link href={"/#about"}>About</Link>
               </motion.li>
@@ -93,9 +100,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, y: -90 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
               >
                 <Link href={"/#projects"}>Projects</Link>
               </motion.li>
@@ -103,9 +107,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, y: -110 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
               >
                 <Link href={"/#blog"}>Blog</Link>
               </motion.li>

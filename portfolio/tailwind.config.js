@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FF4081",
-        secondary: "#4CAF50",
+        primary: "#87CEEB",
+        secondary: "#AED6FF",
       },
       gradientColorStops: (theme) => ({
         ...theme("colors"),
