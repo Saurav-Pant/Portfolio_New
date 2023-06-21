@@ -31,7 +31,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
 
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-lg">
+      <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-md">
         <div className="flex items-center flex-shrink-0 text-white  mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
             <Link href="/">
@@ -73,11 +73,11 @@ const Navbar: React.FC<Props> = (props: Props) => {
 
         {isOpen && (
           <motion.div
-            className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 "
+            className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 shadow-black"
             initial={{ opacity: 0, y: -70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.7,
               type: "spring",
               stiffness: 260,
               damping: 20,

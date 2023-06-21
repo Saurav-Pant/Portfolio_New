@@ -11,7 +11,7 @@ const Hero: React.FC<Props> = (props: Props) => {
   return (
     <div
       className="h-[90vh] bg-cover bg-center  relative shadow-lg 
-      bg-gradient-to-br from-blue-300 via-blue-50 to-blue-100 "
+      bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50 "
       id="Hero_Section"
     >
       <div className="flex flex-col items-center justify-center h-full text-center text-4xl">
@@ -41,7 +41,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               <FaGithub size={32} />
             </Link>
           </li>
-          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-black hover:text-sky-600">
+          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600">
             <Link
               href="https://twitter.com/"
               target="_blank"
