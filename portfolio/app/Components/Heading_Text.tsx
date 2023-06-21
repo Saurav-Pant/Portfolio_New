@@ -1,24 +1,39 @@
-import React, { Children, ReactNode } from "react";
+import React, { ReactNode } from "react";
+import { Lobster, Bebas_Neue } from "next/font/google";
 
 interface Props {
   children: ReactNode;
   className?: string;
 }
 
-export const HeadingText: React.FC<Props> = ({ children }) => {
+const lobster = Lobster({
+  weight: ["400"],
+  display: "swap",
+  subsets: ["latin"],
+});
+
+const bebas = Bebas_Neue({
+  weight: ["400"],
+  display: "swap",
+  subsets: ["latin"],
+});
+
+export const HeadingText: React.FC<Props> = ({ children, className }) => {
   return (
-    <div>
-      <h1 className="text-transparent text-6xl lg:text-8xl bg-clip-text bg-gradient-to-r from-secondary to-primary">
-        {children}
-      </h1>
-    </div>
+    <h1
+      className={`${lobster.className} text-transparent text-6xl lg:text-8xl bg-clip-text bg-gradient-to-r from-secondary to-primary ${className}`}
+    >
+      {children}
+    </h1>
   );
 };
 
 export function Heading2({ children }: Props) {
   return (
     <div className="relative">
-      <h2 className="text-4xl text-dark-blue-2 inline-block">
+      <h2
+        className={`${bebas.className} text-4xl text-dark-blue-2 inline-block`}
+      >
         {children}
         <svg
           aria-hidden="true"

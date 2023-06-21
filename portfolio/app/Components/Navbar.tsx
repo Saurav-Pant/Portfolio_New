@@ -15,6 +15,20 @@ const Navbar: React.FC<Props> = (props: Props) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-lg">
@@ -31,7 +45,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
         {isMobile ? (
           <div className="block">
             <button
-            id="nav-toggle"
+              id="nav-toggle"
               className="flex items-center px-3 py-2 rounded cursor-default"
               onClick={toggle}
             >
@@ -42,12 +56,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
           <div className="sm:flex hidden pr-10">
             <ul className={isOpen ? "hidden" : "flex"}>
               <li
-                className="inline-block text-gray-500 hover:text-white
-              transition-colors duration-500 ease-in-out mr-4"
-              >
-                <Link href="/">Home</Link>
-              </li>
-              <li
                 className="inline-block text-gray-500 hover:text-white 
               transition-colors duration-500 ease-in-out mr-4 "
               >
@@ -57,7 +65,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 <Link href={"/#projects"}>Projects</Link>
               </li>
               <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
-                <Link href={"/#blog"}>Blog</Link>
+                <Link href={"/#blog"}>Blogs</Link>
               </li>
             </ul>
           </div>
@@ -72,17 +80,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
               }}
             >
               <motion.li
-                className="block text-gray-500 hover:text-white mr-4 w-full text-center"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Link href="/">Home</Link>
-              </motion.li>
-              <motion.li
-                className="block text-gray-500 hover:text-white mr-4"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: -70 }}
@@ -92,7 +90,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 <Link href={"/#about"}>About</Link>
               </motion.li>
               <motion.li
-                className="block text-gray-500 hover:text-white mr-4"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: -90 }}
@@ -102,7 +100,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 <Link href={"/#projects"}>Projects</Link>
               </motion.li>
               <motion.li
-                className="block text-gray-500 hover:text-white mr-4"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: -110 }}
