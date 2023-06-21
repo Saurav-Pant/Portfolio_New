@@ -31,11 +31,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
 
   return (
     <div>
-      <nav
-        className={`flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200 shadow-black  ${
-          isOpen ? "fixed w-full z-50 shadow-lg" : "shadow-md" 
-        }`}
-      >
+      <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-lg">
         <div className="flex items-center flex-shrink-0 text-white  mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
             <Link href="/">
@@ -69,13 +65,13 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="inline-block text-gray-500 hover:text-white 
               transition-colors duration-500 ease-in-out mr-4 "
               >
-                <Link href="/about">About</Link>
+                <Link href={"/#about"}>About</Link>
               </li>
               <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
-                <Link href="/projects">Projects</Link>
+                <Link href={"/#projects"}>Projects</Link>
               </li>
               <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
-                <Link href="/contact">Blog</Link>
+                <Link href={"/#blog"}>Blog</Link>
               </li>
             </ul>
           </div>
@@ -107,7 +103,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Link href="/about">About</Link>
+                <Link href={"/#about"}>About</Link>
               </motion.li>
               <motion.li
                 className="block text-gray-500 hover:text-white mr-4"
@@ -117,7 +113,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Link href="/projects">Projects</Link>
+                <Link href={"/#projects"}>Projects</Link>
               </motion.li>
               <motion.li
                 className="block text-gray-500 hover:text-white mr-4"
@@ -127,7 +123,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <Link href="/blog">Blog</Link>
+                <Link href={"/#blog"}>Blog</Link>
               </motion.li>
             </ul>
           </motion.div>

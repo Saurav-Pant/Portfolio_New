@@ -3,19 +3,14 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { HeadingText } from "./Heading_Text";
 
-interface Props {
-  // Props Here
-}
+interface Props {}
 
 const Hero: React.FC<Props> = (props: Props) => {
   return (
     <div
-      className="h-[80vh] bg-cover bg-center  relative shadow-lg 
-      bg-gradient-to-r from-blue-200 via-blue-50 to-blue-50
-      
-      z-30"
+      className="h-[90vh] bg-cover bg-center  relative shadow-lg 
+      bg-gradient-to-r from-blue-300 via-blue-50 to-blue-100"
       id="Hero_Section"
-      style={{ boxShadow: "0px -10px 20px rgba(0, 0, 0, 0.2)" }}
     >
       <div className="flex flex-col items-center justify-center h-full text-center">
         <HeadingText>Saurav Pant </HeadingText>
@@ -39,7 +34,7 @@ const Hero: React.FC<Props> = (props: Props) => {
             <FaTwitter size={32} />
           </Link>
         </li>
-        <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-white hover:text-blue-600">
+        <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-white hover:text-blue-500">
           <Link
             href="https://www.linkedin.com/in/saurav-pant/"
             target="_blank"
