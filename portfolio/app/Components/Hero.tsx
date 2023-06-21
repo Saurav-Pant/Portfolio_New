@@ -5,8 +5,9 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <div
-      className="h-[80vh] bg-cover bg-center bg-hero relative"
-      id="Hero_Section "
+      className="h-[80vh] bg-cover bg-center bg-hero relative shadow-lg"
+      id="Hero_Section"
+      style={{ marginTop: "-6px", boxShadow: "0px -10px 20px rgba(0, 0, 0, 0.2)" }}
     >
       <div className="flex flex-col items-center justify-center h-full text-center">
         <h1 className="text-4xl font-bold text-white">Saurav Pant</h1>

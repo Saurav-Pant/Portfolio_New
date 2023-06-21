@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
@@ -6,11 +6,11 @@ import Image from "next/image";
 import logo from "../Assets/logo2.png";
 import { motion } from "framer-motion";
 
-type Props = {};
+interface Props {}
 
-const Navbar = (props: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+const Navbar: React.FC<Props> = (props: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -32,8 +32,8 @@ const Navbar = (props: Props) => {
   return (
     <div>
       <nav
-        className={`flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200 ${
-          isOpen ? "fixed w-full z-50" : ""
+        className={`flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200 shadow-black  ${
+          isOpen ? "fixed w-full z-50 shadow-lg" : "shadow-md" 
         }`}
       >
         <div className="flex items-center flex-shrink-0 text-white  mr-6">
