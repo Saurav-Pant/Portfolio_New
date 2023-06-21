@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
           <div className="block">
             <button
               id="nav-toggle"
-              className="flex items-center px-3 py-2 rounded text-gray-500 hover:text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline"
+              className="flex items-center px-3 py-2 rounded cursor-default "
               onClick={toggle}
             >
               {isOpen ? <RiCloseLine size={20} /> : <RiMenuLine size={20} />}
@@ -77,24 +77,50 @@ const Navbar = (props: Props) => {
 
         {isOpen && (
           <motion.div
-            className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen bg-gradient-to-t from-fad0c4 to-ffd1ff"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ul className="flex flex-col sm:flex-col justify-center items-center">
-              <li className="block text-gray-500 hover:text-white mr-4">
+            className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10">
+            <ul className="flex flex-col sm:flex-col justify-center items-center font-light" style={{
+              fontSize: "1.5rem"
+            }}>
+              <motion.li
+                className="block text-gray-500 hover:text-white mr-4 w-full text-center "
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Link href="/">Home</Link>
-              </li>
-              <li className="block text-gray-500 hover:text-white mr-4">
+              </motion.li>
+              <motion.li
+                className="block text-gray-500 hover:text-white mr-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: -70 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
                 <Link href="/about">About</Link>
-              </li>
-              <li className="block text-gray-500 hover:text-white mr-4">
+              </motion.li>
+              <motion.li
+                className="block text-gray-500 hover:text-white mr-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: -90 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <Link href="/projects">Projects</Link>
-              </li>
-              <li className="block text-gray-500 hover:text-white mr-4">
+              </motion.li>
+              <motion.li
+                className="block text-gray-500 hover:text-white mr-4"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: -110 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
                 <Link href="/blog">Blog</Link>
-              </li>
+              </motion.li>
             </ul>
           </motion.div>
         )}
