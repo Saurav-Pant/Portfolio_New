@@ -78,7 +78,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
         )}
 
         {isOpen && (
-          <motion.div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 z-40">
+          <motion.div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 ">
             <ul
               className="flex flex-col sm:flex-col justify-center items-center font-light"
               style={{

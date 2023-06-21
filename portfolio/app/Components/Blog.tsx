@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Blog = (props: Props) => {
-  return (
-    <div>Blog</div>
-  )
-}
+  return <div id="blog"></div>;
+};
 
-export default Blog
+export default Blog;
