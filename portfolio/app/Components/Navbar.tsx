@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../Assets/logo2.png";
+import logo from "../Assets/logo_main.png";
 import { motion } from "framer-motion";
 
 interface Props {}
@@ -15,20 +15,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-lg">
@@ -45,7 +31,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
         {isMobile ? (
           <div className="block">
             <button
-              id="nav-toggle"
+            id="nav-toggle"
               className="flex items-center px-3 py-2 rounded cursor-default"
               onClick={toggle}
             >
