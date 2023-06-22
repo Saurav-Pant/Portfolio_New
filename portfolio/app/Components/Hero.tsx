@@ -22,6 +22,29 @@ const Hero: React.FC<Props> = (props: Props) => {
           </span>
         </p>
       </div>
+      {/* Down Icon */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <button>
+          <Link
+            href="#About"
+            className="text-4xl text-gray-400 hover:text-black"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 animate-bounce"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 3a.5.5 0 01.5.5v9.793l3.146-3.147a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708L9.5 13.293V3.5A.5.5 0 0110 3z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </Link>
+        </button>
+      </div>
+
       <motion.div
         initial={{
           opacity: 0,

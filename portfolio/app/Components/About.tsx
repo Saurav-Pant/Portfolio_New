@@ -79,7 +79,10 @@ const skills = [
 
 const About = (props: Props) => {
   return (
-    <div className="flex flex-col md:flex-row min-h-[80vh] sm:pl-10 md:pl-20 sm:pt-16">
+    <div
+      className="flex flex-col md:flex-row min-h-[85vh] sm:pl-10 md:pl-20 sm:pt-16 "
+      id="About"
+    >
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2>About</Heading2>
         <h1 className="text-2xl font-bold pt-5">
@@ -104,10 +107,10 @@ const About = (props: Props) => {
           {skills.map((skill) => {
             const Icon = skill.icon;
             return (
-              <div key={skill.id} className="relative inline-block group">
-                <Icon size={30} />
+              <div key={skill.id} className="relative inline-block group ">
+                <Icon size={35} />
                 <span
-                  className="opacity-0 absolute top-7 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out
+                  className="opacity-0 absolute top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out
                 "
                 >
                   {skill.name}
