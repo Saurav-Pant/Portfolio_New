@@ -2,8 +2,7 @@ import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
 import sp from "../Components/sp.jpg";
-import ReactTooltip from "react-tooltip";
-import "react-tooltip/dist/index.css";
+
 
 import {
   SiHtml5,
@@ -105,11 +104,6 @@ const About = (props: Props) => {
                 data-tip={skill.name}
               >
                 <Icon size={30} />
-                <ReactTooltip
-                  place="bottom"
-                  effect="solid"
-                  className="tooltip bg-gray-800 text-white px-2 py-1 rounded"
-                />
               </div>
             );
           })}
