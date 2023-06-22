@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
-import sp from "../Components/sp.jpg";
+import sp from "../Assets/about-2.png";
 
 import {
   SiHtml5,
@@ -83,9 +83,16 @@ const About = (props: Props) => {
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2>About</Heading2>
         <h1 className="text-2xl font-bold pt-5">
-          Experienced Full Stack Web Developer | Specializing in MERN Stack
+          Experienced Full Stack Web Developer | Specializing in{" "}
+          <span
+            className="
+          bg-gradient-to-tr from-primary to-secondary text-transparent
+           bg-clip-text"
+          >
+            MERN Stack
+          </span>
         </h1>
-        <p className="pt-5 font-medium">
+        <p className="pt-5 font-medium space-x-1">
           Hi, I'm Saurav Pant, an experienced full stack web developer with 2+
           years of expertise. I specialize in MERN stack development, leveraging
           MongoDB, Express.js, React, and Node.js. I excel in creating scalable
@@ -111,10 +118,9 @@ const About = (props: Props) => {
         </div>
       </div>
 
-      {/* Image Or Animation Section */}
-      <div className="flex justify-center items-center md:w-1/2">
+      <div className="flex justify-center items-center md:w-1/2 sm:pt-5">
         <div>
-          <Image src={sp} alt="Saurav Pant" />
+          <Image src={sp} alt="Saurav Pant" width={400} height={400} />
         </div>
       </div>
     </div>

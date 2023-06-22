@@ -31,9 +31,7 @@ export const HeadingText: React.FC<Props> = ({ children, className }) => {
 export function Heading2({ children }: Props) {
   return (
     <div className="relative">
-      <h2
-        className={`${bebas.className} text-4xl text-dark-blue-2 inline-block`}
-      >
+      <h2 className={`${bebas.className} inline-block text-4xl font-bold text-sky-blue-500`}>
         {children}
         <svg
           aria-hidden="true"
