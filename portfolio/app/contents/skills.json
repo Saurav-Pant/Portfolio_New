@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "name": "HTML",
+      "icon": "SiHtml5"
+    },
+    {
+      "id": 2,
+      "name": "CSS",
+      "icon": "SiCss3"
+    },
+    {
+      "id": 3,
+      "name": "Tailwind CSS",
+      "icon": "SiTailwindcss"
+    },
+    {
+      "id": 4,
+      "name": "JavaScript",
+      "icon": "SiJavascript"
+    },
+    {
+      "id": 5,
+      "name": "GitHub",
+      "icon": "SiGithub"
+    },
+    {
+      "id": 6,
+      "name": "React",
+      "icon": "SiReact"
+    },
+    {
+      "id": 7,
+      "name": "Next.js",
+      "icon": "SiNextdotjs"
+    },
+    {
+      "id": 8,
+      "name": "TypeScript",
+      "icon": "SiTypescript"
+    },
+    {
+      "id": 9,
+      "name": "Node.js",
+      "icon": "SiNodedotjs"
+    },
+    {
+      "id": 10,
+      "name": "Express",
+      "icon": "SiExpress"
+    },
+    {
+      "id": 11,
+      "name": "MongoDB",
+      "icon": "SiMongodb"
+    }
+  ]
+  
