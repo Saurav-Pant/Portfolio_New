@@ -2,15 +2,24 @@
 import React, { useState } from "react";
 import { Heading2 } from "./Heading_Text";
 
+type Project = {
+  id: number;
+  name: string;
+  category: string;
+  image: string;
+};
 
 type Props = {};
 
 const Projects = (props: Props) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const projects: Project[] = require("../contents/Projects.json");
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
   };
+
+  const filteredProjects = selectedCategory === "All" ? projects : projects.filter((project) => project.category.includes(selectedCategory));
 
   return (
     <div id="projects" className="min-h-screen px-16">
@@ -58,10 +67,42 @@ const Projects = (props: Props) => {
           Web3
         </button>
       </div>
-      <div></div>
+      <div>
+        {filteredProjects.map((project) => (
+          <div key={project.id}>
+            <img src={project.image} alt={project.name} />
+            <div>{project.name}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Projects;
 
+//   ,
+//   {
+//     "id": 2,
+//     "name": "Dietician Website",
+//     "category": "All,Landing Page",
+//     "image": "Assets/dietician-website.jpg"
+//   },
+//   {
+//     "id": 3,
+//     "name": "Github Finder",
+//     "category": "All,FrontEnd",
+//     "image": "Assets/github-finder.jpg"
+//   },
+//   {
+//     "id": 4,
+//     "name": "Blood Donation Project",
+//     "category": "All,MERN",
+//     "image": "Assets/blood-donation-project.jpg"
+//   },
+//   {
+//     "id": 5,
+//     "name": "Project 5",
+//     "category": "All,Web3",
+//     "image": "Assets/project-5.jpg"
+//   }

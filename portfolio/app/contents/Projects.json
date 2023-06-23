@@ -3,31 +3,7 @@
       "id": 1,
       "name": "Expense Tracker",
       "category": "All,MERN",
-      "image": "Assets/expense-tracker.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Dietician Website",
-      "category": "All,Landing Page",
-      "image": "Assets/dietician-website.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Github Finder",
-      "category": "All,FrontEnd",
-      "image": "Assets/github-finder.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Blood Donation Project",
-      "category": "All,MERN",
-      "image": "Assets/blood-donation-project.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Project 5",
-      "category": "All,Web3",
-      "image": "Assets/project-5.jpg"
+      "image": "../Assets/expense_tracker.png"
     }
   ]
-  
+
