@@ -7,7 +7,6 @@ import {
   SiHtml5,
   SiCss3,
   SiTailwindcss,
-  SiJavascript,
   SiGithub,
   SiReact,
   SiNextdotjs,
@@ -16,6 +15,9 @@ import {
   SiExpress,
   SiMongodb,
 } from "react-icons/si";
+
+import { DiJavascript1 } from "react-icons/di";
+import { TbBrandTypescript } from "react-icons/tb";
 
 type Props = {};
 
@@ -38,7 +40,7 @@ const skills = [
   {
     id: 4,
     name: "JavaScript",
-    icon: SiJavascript,
+    icon: DiJavascript1,
   },
   {
     id: 5,
@@ -58,7 +60,7 @@ const skills = [
   {
     id: 8,
     name: "TypeScript",
-    icon: SiTypescript,
+    icon: TbBrandTypescript,
   },
   {
     id: 9,
@@ -92,7 +94,7 @@ const About = (props: Props) => {
           bg-gradient-to-tr from-primary to-secondary text-transparent
            bg-clip-text pl-2"
           >
-             MERN
+            MERN
           </span>
         </h1>
 

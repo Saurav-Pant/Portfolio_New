@@ -15,9 +15,9 @@ const Hero: React.FC<Props> = (props: Props) => {
       id="Hero_Section"
     >
       <div className="flex flex-col items-center justify-center h-full text-center text-4xl">
-        <HeadingText>Saurav Pant </HeadingText>
-        <p>
-          <span className="text-xl bg-gradient-to-r text-transparent bg-clip-text from-sky-200 to-blue-500">
+        <HeadingText>Saurav Pant</HeadingText>
+        <p className="animate-bounce transition-all duration-500">
+          <span className="text-xl bg-gradient-to-r from-sky-200 to-blue-500 bg-clip-text text-transparent">
             Full Stack Developer
           </span>
         </p>
