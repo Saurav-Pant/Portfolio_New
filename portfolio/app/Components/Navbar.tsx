@@ -59,7 +59,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="inline-block text-gray-500 hover:text-white 
               transition-colors duration-500 ease-in-out mr-4 "
               >
-                <Link href={"/#about"}>About</Link>
+                <Link href={"/#About"}>About</Link>
               </li>
               <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
                 <Link href={"/#projects"}>Projects</Link>
@@ -94,7 +94,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Link href={"/#about"}>About</Link>
+                <Link href={"/#About"}>About</Link>
               </motion.li>
               <motion.li
                 className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"

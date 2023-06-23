@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
-import sp from "../Assets/about-2.png";
+import sp from "../Assets/about_bg.png";
 
 import {
   SiHtml5,
@@ -111,7 +111,7 @@ const About = (props: Props) => {
               return (
                 <div key={skill.id} className="relative inline-block group">
                   <Icon size={35} />
-                  <span className="opacity-0 absolute md:top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+                  <span className="opacity-0 absolute top-5 lg:top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
                     {skill.name}
                   </span>
                 </div>
