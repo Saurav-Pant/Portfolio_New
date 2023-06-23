@@ -80,7 +80,7 @@ const skills = [
 const About = (props: Props) => {
   return (
     <div
-      className="flex flex-col md:flex-row min-h-[85vh] sm:pl-10 md:pl-20 sm:pt-16 "
+      className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-16 sm:pt-16 "
       id="About"
     >
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
@@ -95,6 +95,7 @@ const About = (props: Props) => {
             MERN Stack
           </span>
         </h1>
+
         <p className="pt-5 font-medium space-x-1">
           Hi, I'm Saurav Pant, an experienced full stack web developer with 2+
           years of expertise. I specialize in MERN stack development, leveraging
@@ -103,14 +104,14 @@ const About = (props: Props) => {
           performance. With a problem-solving mindset and a keen eye for detail,
           I deliver exceptional user experiences.
         </p>
-        <div className="flex items-center justify-center pt-5 space-x-6">
+        <div className="flex items-center justify-center py-5 space-x-6 sm:py-7">
           {skills.map((skill) => {
             const Icon = skill.icon;
             return (
               <div key={skill.id} className="relative inline-block group ">
                 <Icon size={35} />
                 <span
-                  className="opacity-0 absolute top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out
+                  className="opacity-0 absolute top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out 
                 "
                 >
                   {skill.name}
