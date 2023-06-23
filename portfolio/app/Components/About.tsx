@@ -105,20 +105,19 @@ const About = (props: Props) => {
           I deliver exceptional user experiences.
         </p>
         <div className="flex items-center justify-center py-5 space-x-6 sm:py-7">
-          {skills.map((skill) => {
-            const Icon = skill.icon;
-            return (
-              <div key={skill.id} className="relative inline-block group ">
-                <Icon size={35} />
-                <span
-                  className="opacity-0 absolute top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out 
-                "
-                >
-                  {skill.name}
-                </span>
-              </div>
-            );
-          })}
+          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-5">
+            {skills.map((skill) => {
+              const Icon = skill.icon;
+              return (
+                <div key={skill.id} className="relative inline-block group">
+                  <Icon size={35} />
+                  <span className="opacity-0 absolute md:top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+                    {skill.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
