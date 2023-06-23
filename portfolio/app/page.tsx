@@ -13,16 +13,3 @@ export default function Home() {
     </main>
   );
 }
-// import {
-//   SiHtml5,
-//   SiCss3,
-//   SiTailwindcss,
-//   SiJavascript,
-//   SiGithub,
-//   SiReact,
-//   SiNextdotjs,
-//   SiTypescript,
-//   SiNodedotjs,
-//   SiExpress,
-//   SiMongodb,
-// } from "react-icons/si";
