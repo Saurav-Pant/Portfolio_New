@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Heading2 } from "./Heading_Text";
 
@@ -19,7 +19,12 @@ const Projects = (props: Props) => {
     setSelectedCategory(category);
   };
 
-  const filteredProjects = selectedCategory === "All" ? projects : projects.filter((project) => project.category.includes(selectedCategory));
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) =>
+          project.category.includes(selectedCategory)
+        );
 
   return (
     <div id="projects" className="min-h-screen px-16">
@@ -70,7 +75,7 @@ const Projects = (props: Props) => {
       <div>
         {filteredProjects.map((project) => (
           <div key={project.id}>
-            <img src={project.image} alt={project.name} />
+            <img src={project.image} alt={project.name} className="w-96 h-96" />
             <div>{project.name}</div>
           </div>
         ))}

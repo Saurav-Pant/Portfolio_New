@@ -1,9 +1,8 @@
 [
-    {
-      "id": 1,
-      "name": "Expense Tracker",
-      "category": "All,MERN",
-      "image": "../Assets/expense_tracker.png"
-    }
-  ]
-
+  {
+    "id": 1,
+    "name": "Expense Tracker",
+    "category": "All,MERN",
+    "image": "https://raw.githubusercontent.com/Saurav-Pant/Portfolio_New/main/portfolio/app/Assets/expense_tracker.png?token=GHSAT0AAAAAACDZH6R3ZZL55FTNWCKI4O3UZEVMTYQ"
+  }
+]
