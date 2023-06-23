@@ -5,6 +5,7 @@ import Image from "next/image";
 import sp from "../Assets/about_bg.png";
 import { motion } from "framer-motion";
 
+
 import {
   SiHtml5,
   SiCss3,
