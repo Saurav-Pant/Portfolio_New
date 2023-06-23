@@ -86,13 +86,13 @@ const About = (props: Props) => {
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2>About</Heading2>
         <h1 className="text-2xl font-bold pt-5">
-          Experienced Full Stack Web Developer | Specializing in{" "}
+          Full Stack Web Developer | Specializing in
           <span
             className="
           bg-gradient-to-tr from-primary to-secondary text-transparent
-           bg-clip-text"
+           bg-clip-text pl-2"
           >
-            MERN Stack
+             MERN
           </span>
         </h1>
 
@@ -111,7 +111,7 @@ const About = (props: Props) => {
               return (
                 <div key={skill.id} className="relative inline-block group">
                   <Icon size={35} />
-                  <span className="opacity-0 absolute top-5 lg:top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+                  <span className="opacity-0 absolute top-5 lg:top-10 left-1/2 transform -translate-x-1/2 translate-y-2 group-hover:opacity-100 bg-white px-2 py-2 rounded-md shadow-lg transition duration-300 ease-in-out">
                     {skill.name}
                   </span>
                 </div>

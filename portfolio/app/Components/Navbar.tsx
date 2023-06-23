@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../Assets/logo_main.png";
+import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
 
 interface Props {}
