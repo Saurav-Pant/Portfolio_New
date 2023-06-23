@@ -30,9 +30,9 @@ const Projects = (props: Props) => {
     <div id="projects" className="min-h-screen px-16">
       <Heading2 className="">Projects</Heading2>
       {/* A line of buttons for All, Landing Page, FrontEnd, MERN, Web3 */}
-      <div className="flex flex-row justify-evenly mt-10">
+      <div className="flex flex-row justify-evenly mt-10 flex-wrap gap-2">
         <button
-          className={`border-2 border-blue-400 px-4 py-2 rounded-md ${
+          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
             selectedCategory === "All" ? "bg-blue-300 text-white" : ""
           }`}
           onClick={() => handleCategoryClick("All")}
@@ -40,7 +40,7 @@ const Projects = (props: Props) => {
           All
         </button>
         <button
-          className={`border-2 border-blue-400 px-4 py-2 rounded-md ${
+          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
             selectedCategory === "Landing Page" ? "bg-blue-300 text-white" : ""
           }`}
           onClick={() => handleCategoryClick("Landing Page")}
@@ -48,7 +48,7 @@ const Projects = (props: Props) => {
           Landing Page
         </button>
         <button
-          className={`border-2 border-blue-400 px-4 py-2 rounded-md ${
+          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
             selectedCategory === "FrontEnd" ? "bg-blue-300 text-white" : ""
           }`}
           onClick={() => handleCategoryClick("FrontEnd")}
@@ -56,7 +56,7 @@ const Projects = (props: Props) => {
           FrontEnd
         </button>
         <button
-          className={`border-2 border-blue-400 px-4 py-2 rounded-md ${
+          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
             selectedCategory === "MERN" ? "bg-blue-300 text-white" : ""
           }`}
           onClick={() => handleCategoryClick("MERN")}
@@ -64,7 +64,7 @@ const Projects = (props: Props) => {
           MERN
         </button>
         <button
-          className={`border-2 border-blue-400 px-4 py-2 rounded-md ${
+          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
             selectedCategory === "Web3" ? "bg-blue-300 text-white" : ""
           }`}
           onClick={() => handleCategoryClick("Web3")}
@@ -73,9 +73,17 @@ const Projects = (props: Props) => {
         </button>
       </div>
       <div>
+        {filteredProjects.length === 0 && (
+          <div className="text-center mt-10 animate-bounce">No projects found</div>
+        )}
+
         {filteredProjects.map((project) => (
-          <div key={project.id}>
-            <img src={project.image} alt={project.name} className="w-96 h-96" />
+          <div
+            key={project.id}
+            className="
+            flex flex-row justify-start items-center p-4 m-4 px-16"
+          >
+            <img src={project.image} alt={project.name} className="w-32 h-32" />
             <div>{project.name}</div>
           </div>
         ))}
