@@ -37,6 +37,9 @@ dependencies:
   react-scroll:
     specifier: ^1.8.9
     version: 1.8.9(react-dom@18.2.0)(react@18.2.0)
+  react-scroll-wheel-handler:
+    specifier: ^2.2.0
+    version: 2.2.0
   react-tooltip:
     specifier: ^5.14.0
     version: 5.14.0(react-dom@18.2.0)(react@18.2.0)
@@ -842,6 +845,10 @@ packages:
     dependencies:
       '@remix-run/router': 1.6.3
       react: 18.2.0
+    dev: false
+
+  /react-scroll-wheel-handler@2.2.0:
+    resolution: {integrity: sha512-x1OqSyF5qzCEvX2C3Rgfm6BoOMwuV4JJezBZEkRkaMe0cnb9xrnsoYtwrKIJ+J1zRy3dZESoHdoAtepzW+xtKA==}
     dev: false
 
   /react-scroll@1.8.9(react-dom@18.2.0)(react@18.2.0):

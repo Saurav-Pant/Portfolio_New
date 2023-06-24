@@ -1,15 +1,16 @@
-import About from "./Components/About";
-import Blog from "./Components/Blog";
+// Home.tsx
 import Hero from "./Components/Hero";
+import About from "./Components/About";
 import Projects from "./Components/Projects";
+import Blog from "./Components/Blog";
 
 export default function Home() {
   return (
-    <main>
+    <main >
       <Hero />
-      <About/>
-      <Projects/>
-      <Blog/>
+      <About />
+      <Projects />
+      <Blog />
     </main>
   );
 }
