@@ -38,6 +38,10 @@ const Navbar: React.FC<Props> = (props: Props) => {
     };
   }, []);
 
+  const handleNavLinkClick = () => {
+    setIsOpen(false); // Close the navbar
+  };
+
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-md">
@@ -127,6 +131,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
               stiffness: 260,
               damping: 20,
             }}
+            style={{ pointerEvents: "auto" }}
           >
             <ul
               className="flex flex-col sm:flex-col justify-center items-center font-light"
@@ -135,25 +140,49 @@ const Navbar: React.FC<Props> = (props: Props) => {
               }}
             >
               <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Link href={"/#About"}>About</Link>
+                <ScrollLink
+                  to="About"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleNavLinkClick}
+                >
+                  About
+                </ScrollLink>
               </motion.li>
               <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Link href={"/#projects"}>Projects</Link>
+                <ScrollLink
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleNavLinkClick}
+                >
+                  Projects
+                </ScrollLink>
               </motion.li>
               <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3"
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Link href={"/#blog"}>Blog</Link>
+                <ScrollLink
+                  to="blog"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleNavLinkClick}
+                >
+                  Blog
+                </ScrollLink>
               </motion.li>
             </ul>
           </motion.div>
