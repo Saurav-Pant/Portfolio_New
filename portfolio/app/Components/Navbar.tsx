@@ -23,6 +23,8 @@ const Navbar: React.FC<Props> = (props: Props) => {
       smooth: true,
       duration: 500,
     });
+    window.scroll(0,0)
+    setIsOpen(false); 
   };
 
   useEffect(() => {

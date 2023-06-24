@@ -32,8 +32,8 @@ const Hero: React.FC<Props> = (props: Props) => {
         <ScrollLink
           to="About"
           smooth={true}
-          duration={100}
-          className="text-gray-400 hover:text-black"
+          duration={50}
+          className="text-gray-400 hover:text-black cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

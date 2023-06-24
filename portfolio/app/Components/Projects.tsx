@@ -27,7 +27,7 @@ const Projects = (props: Props) => {
         );
 
   return (
-    <div id="projects" className="min-h-screen px-16 pt-6 sm:pt-20">
+    <div id="projects" className="min-h-screen px-16 pt-24">
       <Heading2 className="">Projects</Heading2>
       {/* A line of buttons for All, Landing Page, FrontEnd, MERN, Web3 */}
       <div className="flex flex-row justify-evenly mt-10 flex-wrap gap-2">
