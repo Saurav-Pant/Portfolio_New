@@ -4,6 +4,7 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { HeadingText } from "./Heading_Text";
 import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 
 interface Props {}
 
@@ -16,7 +17,7 @@ const Hero: React.FC<Props> = (props: Props) => {
     >
       <div className="flex flex-col items-center justify-center h-full text-center text-4xl">
         <HeadingText>Saurav Pant</HeadingText>
-        <p className="animate-bounce transition-all duration-500">
+        <p className="">
           <span className="text-xl bg-gradient-to-r from-sky-200 to-blue-500 bg-clip-text text-transparent">
             Full Stack Developer
           </span>
@@ -27,25 +28,27 @@ const Hero: React.FC<Props> = (props: Props) => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2
       flex items-center justify-center gap-4"
       >
-        <button>
-          <Link
-            href="#About"
-            className="text-4xl text-gray-400 hover:text-black"
+        {/* <button className="bg-transparent border-none"> */}
+        <ScrollLink
+          to="About"
+          smooth={true}
+          duration={100}
+          className="text-gray-400 hover:text-black"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 w-10 animate-bounce"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 animate-bounce"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 3a.5.5 0 01.5.5v9.793l3.146-3.147a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708L9.5 13.293V3.5A.5.5 0 0110 3z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-        </button>
+            <path
+              fillRule="evenodd"
+              d="M10 3a.5.5 0 01.5.5v9.793l3.146-3.147a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708L9.5 13.293V3.5A.5.5 0 0110 3z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </ScrollLink>
+        {/* </button> */}
       </div>
 
       <motion.div
