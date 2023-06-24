@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 interface Props {}
 
@@ -14,6 +15,14 @@ const Navbar: React.FC<Props> = (props: Props) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogoClick = () => {
+    scroll.scrollToTop({
+      spy: true,
+      smooth: true,
+      duration: 500,
+    });
   };
 
   useEffect(() => {
@@ -34,11 +43,26 @@ const Navbar: React.FC<Props> = (props: Props) => {
       <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-md">
         <div className="flex items-center flex-shrink-0 text-white  mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
-            <Link href="/">
-              <div className="rounded-full overflow-hidden">
-                <Image src={logo} alt="Logo" width={40} height={40} />
+            <ScrollLink
+              to=""
+              spy={true}
+              smooth={true}
+              offset={70}
+              duration={500}
+            >
+              <div
+                className="rounded-full overflow-hidden"
+                onClick={handleLogoClick}
+              >
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="cursor-pointer"
+                />
               </div>
-            </Link>
+            </ScrollLink>
           </span>
         </div>
 
@@ -55,17 +79,38 @@ const Navbar: React.FC<Props> = (props: Props) => {
         ) : (
           <div className="sm:flex hidden pr-10">
             <ul className={isOpen ? "hidden" : "flex"}>
-              <li
-                className="inline-block text-gray-500 hover:text-white 
-              transition-colors duration-500 ease-in-out mr-4 "
-              >
-                <Link href={"/#About"}>About</Link>
+              <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer">
+                <ScrollLink
+                  to="About"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  About
+                </ScrollLink>
               </li>
-              <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
-                <Link href={"/#projects"}>Projects</Link>
+              <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer">
+                <ScrollLink
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Projects
+                </ScrollLink>
               </li>
-              <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4">
-                <Link href={"/#blog"}>Blogs</Link>
+              <li className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer">
+                <ScrollLink
+                  to="blog"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Blog
+                </ScrollLink>
               </li>
             </ul>
           </div>
