@@ -5,14 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
-import useSmoothScroll from "../Hooks/ScrollSmooth";
 
 interface Props {}
 
 const Navbar: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  useSmoothScroll();
 
   const toggle = () => {
     setIsOpen(!isOpen);
