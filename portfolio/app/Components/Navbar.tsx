@@ -115,7 +115,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                   offset={-70}
                   duration={500}
                 >
-                  Blog
+                  Blogs
                 </ScrollLink>
               </li>
             </ul>
