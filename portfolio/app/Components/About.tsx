@@ -87,7 +87,7 @@ const About = (props: Props) => {
     <div
       className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-20
        "
-      id="About"
+      id="about"
     >
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2>About</Heading2>
