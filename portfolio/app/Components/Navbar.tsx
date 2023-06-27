@@ -4,10 +4,16 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
+
 
 interface Props {}
 
 const Navbar: React.FC<Props> = (props: Props) => {
+  const router = useRouter();
+  const pathname = usePathname()
+  
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -22,7 +28,12 @@ const Navbar: React.FC<Props> = (props: Props) => {
       behavior: "smooth",
     });
     setIsOpen(false);
+
+    if (pathname === "/blog") {
+      router.push("/");
+    }
   };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,25 +48,21 @@ const Navbar: React.FC<Props> = (props: Props) => {
     };
   }, []);
 
-  // important Stuff 
   const handleNavLinkClick = (to: string) => {
     setIsOpen(false);
-  
+
     if (to === "about" || to === "projects") {
       window.location.href = `/#${to}`;
-    } 
-    if (to === "blog") {
+    } else if (to === "blog") {
       window.location.href = `/blog`;
-    }
-    else  {
+    } else {
       const targetElement = document.getElementById(to);
       if (targetElement) {
-        // Scroll to the target element on other pages
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
-  
+
   return (
     <div>
       <nav
@@ -65,7 +72,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
             <div
-              className="rounded-full overflow-hidden"
+              className="rounded-full overflow-hidden cursor-pointer"
               onClick={handleLogoClick}
             >
               <Image
@@ -73,7 +80,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 alt="Logo"
                 width={40}
                 height={40}
-                className="cursor-pointer"
               />
             </div>
           </span>
