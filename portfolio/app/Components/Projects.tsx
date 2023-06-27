@@ -51,7 +51,7 @@ const Projects = (props: Props) => {
           </button>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center gap-16 mt-28">
+      <div className="flex flex-wrap justify-center items-center mt-28">
         {filteredProjects.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">
             No projects found
@@ -59,8 +59,8 @@ const Projects = (props: Props) => {
         ) : (
           filteredProjects.map((project) => (
             <div
-              className="flex flex-col items-center rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
               key={project.id}
+              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
             >
               <div className="relative h-72 w-80">
                 <Image
@@ -71,7 +71,7 @@ const Projects = (props: Props) => {
                   objectFit="cover"
                 />
               </div>
-              <div className="p-4 text-center">
+              <div className="p-4">
                 <div className="flex justify-between mt-2 gap-10">
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 list-none">
                     <Link
@@ -96,7 +96,7 @@ const Projects = (props: Props) => {
                     >
                       <FiExternalLink
                         size={20}
-                        className=" transition duration-300 ease-in-out"
+                        className="transition duration-300 ease-in-out"
                       />
                     </Link>
                   </li>

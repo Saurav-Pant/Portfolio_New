@@ -14,6 +14,28 @@ const blogs = [
     img: "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     category: "Frontend",
   },
+  {
+    id: 1,
+    title: "How to use React Router",
+    link: "https://reactrouter.com/web/guides/quick-start",
+    img: "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    category: "Backend",
+  },
+  {
+    id: 1,
+    title: "How to use React Router",
+    link: "https://reactrouter.com/web/guides/quick-start",
+    img: "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    category: "Open Source",
+  },
+  {
+    id: 1,
+    title: "How to use React Router",
+    link: "https://reactrouter.com/web/guides/quick-start",
+    img: "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    category: "Web3",
+  },
+
 ];
 
 const Blog = (props: Props) => {
@@ -34,14 +56,14 @@ const Blog = (props: Props) => {
         {" "}
         <Heading2>Blogs</Heading2>
       </span>
-      <div className="flex justify-center gap-6 py-10">
+      <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
         {categories.map((category) => (
           <button
             key={category}
-            className={`px-4 py-2 mx-2 rounded-md border-2 border-blue-400  ${
+            className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
               filter === category ? "bg-blue-300 text-white" : ""
             }`}
-            onClick={() => handleFilterChange(category)}
+            onClick={() => setFilter(category)}
           >
             {category}
           </button>
