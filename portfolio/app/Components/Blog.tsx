@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
 import Link from "next/link";
+import All from "../Assets/all_logo.png";
+import frontend from "../Assets/frontend_logo.png";
+import backend from "../Assets/backend_logo.png";
+import OpenSource from "../Assets/open-source.png";
+import web3 from "../Assets/web3.png";
 
 type Props = {};
 
@@ -35,7 +40,6 @@ const blogs = [
     img: "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     category: "Web3",
   },
-
 ];
 
 const Blog = (props: Props) => {
@@ -65,7 +69,53 @@ const Blog = (props: Props) => {
             }`}
             onClick={() => setFilter(category)}
           >
-            {category}
+            {category === "All" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image src={All} alt="all icon" width={16} height={16} />
+              </div>
+            )}
+            {category === "Frontend" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image
+                  src={frontend}
+                  alt="FrontEnd icon"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            )}
+            {category === "Backend" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image
+                  src={backend}
+                  alt="backend icon"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            )}
+            {category === "Open Source" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image
+                  src={OpenSource}
+                  alt="Landing Icon"
+                  layout="fixed"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            )}
+            {category === "Web3" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image
+                  src={web3}
+                  alt="Landing Icon"
+                  layout="fixed"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            )}
           </button>
         ))}
       </div>
@@ -78,7 +128,7 @@ const Blog = (props: Props) => {
           filteredBlogs.map((blog) => (
             <div
               key={blog.id}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out "
             >
               <Image
                 src={blog.img}

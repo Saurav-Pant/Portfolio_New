@@ -2,8 +2,14 @@
 import React, { useState } from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiCode } from "react-icons/fi";
+import { RiLayoutGridLine } from "react-icons/ri";
 import Link from "next/link";
+import landing from "../Assets/landing_logo.png";
+import frontend from "../Assets/frontend_logo.png";
+import backend from "../Assets/backend_logo.png";
+import web3 from "../Assets/web3_logo.png";
+import all from "../Assets/all_logo.png";
 
 type Project = {
   id: number;
@@ -24,7 +30,7 @@ const Projects = (props: Props) => {
     setSelectedCategory(category);
   };
 
-  const categories = ["All", "Landing Page", "FrontEnd", "MERN", "Web3"];
+  const categories = ["All", "FrontEnd", "MERN", "Web3"];
 
   const filteredProjects =
     selectedCategory === "All"
@@ -34,20 +40,36 @@ const Projects = (props: Props) => {
         );
 
   return (
-    <div id="projects" className="min-h-screen px-16 pt-24">
-      <span className="flex flex-col justify-center items-start text-left md:w-1/2">
+    <div id="projects" className="min-h-screen px-16 pt-24 overflow-y-hidden">
+      <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2 className="">Projects</Heading2>
-      </span>
+      </div>
       <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
         {categories.map((category) => (
           <button
             key={category}
-            className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
+            className={`relative border-2 border-blue-400 px-2 py-2 rounded-md ${
               selectedCategory === category ? "bg-blue-300 text-white" : ""
             }`}
             onClick={() => handleCategoryClick(category)}
           >
-            {category}
+            {category === "All" && <div className="inline-block w-4 h-4 mr-1">
+                <Image src={all} alt="all icon" width={16} height={16} />
+              </div>}
+            {category === "FrontEnd" && <div className="inline-block w-4 h-4 mr-1">
+                <Image src={frontend} alt="FrontEnd icon" width={16} height={16} />
+              </div>}
+            {category === "MERN" && <div className="inline-block w-4 h-4 mr-1">
+                <Image src={backend} alt="backend icon" width={16} height={16} />
+              </div>}
+            {category === "Web3" && (
+              <div className="inline-block w-4 h-4 mr-1">
+                <Image src={landing} alt="Landing Icon" layout="fixed" width={16} height={16} />
+              </div>
+            )}
+            <div className="opacity-0 absolute top-full left-1/2 -translate-x-1/2 translate-y-1/2 group-hover:opacity-100 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+              {category}
+            </div>
           </button>
         ))}
       </div>
@@ -60,7 +82,7 @@ const Projects = (props: Props) => {
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
             >
               <div className="relative h-72 w-80">
                 <Image
@@ -85,9 +107,7 @@ const Projects = (props: Props) => {
                       />
                     </Link>
                   </li>
-
-                  {project.name}
-
+                  <span className="text-black">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none">
                     <Link
                       href={project.liveUrl}
@@ -111,6 +131,7 @@ const Projects = (props: Props) => {
 };
 
 export default Projects;
+
 
 //   ,
 //   {

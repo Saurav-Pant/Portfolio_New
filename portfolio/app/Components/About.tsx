@@ -85,8 +85,7 @@ const skills = [
 const About = (props: Props) => {
   return (
     <div
-      className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-20
-       "
+      className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-20 overflow-x-hidden px-10"
       id="about"
     >
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
