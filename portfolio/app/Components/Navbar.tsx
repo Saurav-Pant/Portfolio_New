@@ -37,19 +37,25 @@ const Navbar: React.FC<Props> = (props: Props) => {
     };
   }, []);
 
+  // important Stuff 
   const handleNavLinkClick = (to: string) => {
     setIsOpen(false);
+  
+    if (to === "about" || to === "projects") {
+      window.location.href = `/#${to}`;
+    } 
     if (to === "blog") {
-      window.location.href = "/blog";
-    } else {
+      window.location.href = `/blog`;
+    }
+    else  {
       const targetElement = document.getElementById(to);
       if (targetElement) {
+        // Scroll to the target element on other pages
         targetElement.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", `#${to}`);
       }
     }
   };
-
+  
   return (
     <div>
       <nav
