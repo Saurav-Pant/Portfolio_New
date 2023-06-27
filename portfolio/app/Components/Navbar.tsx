@@ -1,58 +1,27 @@
-"use client"
-import React, { useState, useEffect } from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { useRouter } from 'next/navigation'
 
-interface NavLink {
-  id: number;
-  label: string;
-  to: string;
-}
+interface Props {}
 
-const navLinks: NavLink[] = [
-  {
-    id: 1,
-    label: "About",
-    to: "#about",
-  },
-  {
-    id: 2,
-    label: "Projects",
-    to: "#projects",
-  },
-  {
-    id: 3,
-    label: "Blog",
-    to: "blog",
-  },
-];
-
-const Navbar: React.FC = () => {
+const Navbar: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const router = useRouter();
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
   const handleLogoClick = () => {
-    scroll.scrollToTop({
-      spy: true,
-      smooth: true,
-      duration: 500,
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
     setIsOpen(false);
-    router.push("/"); // Update the URL to the homepage
-  };
-
-  const handleNavLinkClick = (to: string) => {
-    setIsOpen(false); // Close the navbar
-    router.push("/" + to); // Update the URL to the corresponding section
   };
 
   useEffect(() => {
@@ -68,31 +37,39 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  const handleNavLinkClick = (to: string) => {
+    setIsOpen(false);
+    if (to === "blog") {
+      window.location.href = "/blog";
+    } else {
+      const targetElement = document.getElementById(to);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", `#${to}`);
+      }
+    }
+  };
+
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-md">
-        <div className="flex items-center flex-shrink-0 text-white  mr-6">
+      <nav
+        ref={navbarRef}
+        className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200 fixed w-full z-50 top-0 shadow-md"
+      >
+        <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
-            <ScrollLink
-              to=""
-              spy={true}
-              smooth={true}
-              offset={70}
-              duration={500}
+            <div
+              className="rounded-full overflow-hidden"
+              onClick={handleLogoClick}
             >
-              <div
-                className="rounded-full overflow-hidden"
-                onClick={handleLogoClick}
-              >
-                <Image
-                  src={logo}
-                  alt="Logo"
-                  width={40}
-                  height={40}
-                  className="cursor-pointer"
-                />
-              </div>
-            </ScrollLink>
+              <Image
+                src={logo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+              />
+            </div>
           </span>
         </div>
 
@@ -109,23 +86,24 @@ const Navbar: React.FC = () => {
         ) : (
           <div className="sm:flex hidden pr-10">
             <ul className={isOpen ? "hidden" : "flex"}>
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
-                >
-                  <ScrollLink
-                    to={link.to}
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    onClick={() => handleNavLinkClick(link.to)}
-                  >
-                    {link.label}
-                  </ScrollLink>
-                </li>
-              ))}
+              <li
+                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                onClick={() => handleNavLinkClick("about")}
+              >
+                About
+              </li>
+              <li
+                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                onClick={() => handleNavLinkClick("projects")}
+              >
+                Projects
+              </li>
+              <li
+                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                onClick={() => handleNavLinkClick("blog")}
+              >
+                Blog
+              </li>
             </ul>
           </div>
         )}
@@ -149,24 +127,30 @@ const Navbar: React.FC = () => {
                 fontSize: "1.5rem",
               }}
             >
-              {navLinks.map((link) => (
-                <motion.li
-                  key={link.id}
-                  className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <ScrollLink
-                    to={link.to}
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => handleNavLinkClick(link.to)}
-                  >
-                    {link.label}
-                  </ScrollLink>
-                </motion.li>
-              ))}
+              <motion.li
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleNavLinkClick("about")}
+              >
+                About
+              </motion.li>
+              <motion.li
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleNavLinkClick("projects")}
+              >
+                Projects
+              </motion.li>
+              <motion.li
+                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleNavLinkClick("blog")}
+              >
+                Blog
+              </motion.li>
             </ul>
           </motion.div>
         )}
