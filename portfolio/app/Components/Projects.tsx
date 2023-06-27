@@ -24,6 +24,8 @@ const Projects = (props: Props) => {
     setSelectedCategory(category);
   };
 
+  const categories = ["All", "Landing Page", "FrontEnd", "MERN", "Web3"];
+
   const filteredProjects =
     selectedCategory === "All"
       ? projects
@@ -36,48 +38,18 @@ const Projects = (props: Props) => {
       <span className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2 className="">Projects</Heading2>
       </span>
-      {/* A line of buttons for All, Landing Page, FrontEnd, MERN, Web3 */}
-      <div className="flex flex-row justify-evenly mt-10 flex-wrap gap-2">
-        <button
-          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
-            selectedCategory === "All" ? "bg-blue-300 text-white" : ""
-          }`}
-          onClick={() => handleCategoryClick("All")}
-        >
-          All
-        </button>
-        <button
-          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
-            selectedCategory === "Landing Page" ? "bg-blue-300 text-white" : ""
-          }`}
-          onClick={() => handleCategoryClick("Landing Page")}
-        >
-          Landing Page
-        </button>
-        <button
-          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
-            selectedCategory === "FrontEnd" ? "bg-blue-300 text-white" : ""
-          }`}
-          onClick={() => handleCategoryClick("FrontEnd")}
-        >
-          FrontEnd
-        </button>
-        <button
-          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
-            selectedCategory === "MERN" ? "bg-blue-300 text-white" : ""
-          }`}
-          onClick={() => handleCategoryClick("MERN")}
-        >
-          MERN
-        </button>
-        <button
-          className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
-            selectedCategory === "Web3" ? "bg-blue-300 text-white" : ""
-          }`}
-          onClick={() => handleCategoryClick("Web3")}
-        >
-          Web3
-        </button>
+      <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`border-2 border-blue-400 px-2 py-2 rounded-md ${
+              selectedCategory === category ? "bg-blue-300 text-white" : ""
+            }`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
       <div className="flex flex-wrap justify-center gap-16 mt-28">
         {filteredProjects.length === 0 ? (
