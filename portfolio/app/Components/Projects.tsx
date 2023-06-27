@@ -1,12 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { Heading2 } from "./Heading_Text";
+import Image from "next/image";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import Link from "next/link";
 
 type Project = {
   id: number;
   name: string;
   category: string;
   image: string;
+  githubUrl: string;
+  liveUrl: string;
 };
 
 type Props = {};
@@ -28,7 +33,9 @@ const Projects = (props: Props) => {
 
   return (
     <div id="projects" className="min-h-screen px-16 pt-24">
-      <Heading2 className="">Projects</Heading2>
+      <span className="flex flex-col justify-center items-start text-left md:w-1/2">
+        <Heading2 className="">Projects</Heading2>
+      </span>
       {/* A line of buttons for All, Landing Page, FrontEnd, MERN, Web3 */}
       <div className="flex flex-row justify-evenly mt-10 flex-wrap gap-2">
         <button
@@ -72,21 +79,50 @@ const Projects = (props: Props) => {
           Web3
         </button>
       </div>
-      <div>
-        {filteredProjects.length === 0 && (
-          <div className="text-center mt-10 animate-bounce">No projects found</div>
-        )}
-
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="
-            flex flex-row justify-start items-center p-4 m-4 px-16"
-          >
-            <img src={project.image} alt={project.name} className="w-32 h-32" />
-            <div>{project.name}</div>
+      <div className="flex flex-wrap justify-center gap-16 mt-28">
+        {filteredProjects.length === 0 ? (
+          <div className="text-center mt-10 animate-bounce">
+            No projects found
           </div>
-        ))}
+        ) : (
+          filteredProjects.map((project) => (
+            <div
+              className="flex flex-col items-center rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
+              key={project.id}
+            >
+              <div className="relative h-72 w-80">
+                <Image
+                  src={project.image}
+                  alt="Project Image"
+                  className="rounded-t-md"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <div className="flex justify-between mt-2 gap-10">
+                  <Link
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:bg-black transition duration-300 ease-in-out"
+                  >
+                    <FiGithub size={20} />
+                  </Link>
+                  {project.name}
+
+                  <Link
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiExternalLink size={20} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
