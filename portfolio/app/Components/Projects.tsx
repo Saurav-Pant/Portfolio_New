@@ -101,23 +101,33 @@ const Projects = (props: Props) => {
               </div>
               <div className="p-4 text-center">
                 <div className="flex justify-between mt-2 gap-10">
-                  <Link
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:bg-black transition duration-300 ease-in-out"
-                  >
-                    <FiGithub size={20} />
-                  </Link>
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 list-none">
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiGithub
+                        size={20}
+                        className="hover:text-black transition duration-300 ease-in-out"
+                      />
+                    </Link>
+                  </li>
+
                   {project.name}
 
-                  <Link
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiExternalLink size={20} />
-                  </Link>
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none">
+                    <Link
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiExternalLink
+                        size={20}
+                        className=" transition duration-300 ease-in-out"
+                      />
+                    </Link>
+                  </li>
                 </div>
               </div>
             </div>
