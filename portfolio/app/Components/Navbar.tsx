@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Logo from "../Assets/logo.png";
-import { MouseEvent } from "react";
 
 interface Props {}
 
@@ -30,18 +29,16 @@ const Navbar: React.FC<Props> = () => {
     };
   }, []);
 
-  const handleNavLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault(); // Prevent the default behavior
-
+  const handleNavLinkClick = () => {
     setIsOpen(false); // Close the navbar
   };
 
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200  fixed w-full z-50 top-0 shadow-md">
-        <div className="flex items-center flex-shrink-0 text-white  mr-6">
+        <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
-            <Link href="/">
+            <ScrollLink to="home" smooth={true} duration={500}>
               <Image
                 src={Logo}
                 width={100}
@@ -49,7 +46,7 @@ const Navbar: React.FC<Props> = () => {
                 alt="logo"
                 className="w-12 rounded-full"
               />
-            </Link>
+            </ScrollLink>
           </span>
         </div>
 
@@ -65,22 +62,37 @@ const Navbar: React.FC<Props> = () => {
           </div>
         ) : (
           <div className="sm:flex hidden pr-10">
-            <ul className={isOpen ? "hidden" : "flex"} >
-              <li className="font-medium ">
-                <Link href="/#about" scroll={false}>
-                  About
-                </Link>
-              </li>
-              <li className="font-medium ">
-                <Link href="/#projects" scroll={false}>
-                  Projects
-                </Link>
-              </li>
-              <li className="font-medium">
-                <Link href="/blog">
-                  Blogs
-                </Link>
-              </li>
+            <ul className={isOpen ? "hidden" : "flex gap-4"}>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                activeClass="active"
+              >
+                <li className="font-medium">About</li>
+              </ScrollLink>
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                activeClass="active"
+              >
+                <li className="font-medium">Projects</li>
+              </ScrollLink>
+              <ScrollLink
+                to="blog"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                activeClass="active"
+              >
+                <li className="font-medium">Blog</li>
+              </ScrollLink>
             </ul>
           </div>
         )}
@@ -104,33 +116,57 @@ const Navbar: React.FC<Props> = () => {
                 fontSize: "1.5rem",
               }}
             >
-              <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                onClick={handleNavLinkClick}
+                activeClass="active"
               >
-                <Link href={"/#about"} replace>
+                <motion.li
+                  className="block text-gray-500 hover:text-sky-400 mb-3 cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   About
-                </Link>
-              </motion.li>
-              <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                </motion.li>
+              </ScrollLink>
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                onClick={handleNavLinkClick}
+                activeClass="active"
               >
-                <Link href={"#/projects"} replace>
+                <motion.li
+                  className="block text-gray-500 hover:text-sky-400 mb-3 cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   Projects
-                </Link>
-              </motion.li>
-              <motion.li
-                className="block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                </motion.li>
+              </ScrollLink>
+              <ScrollLink
+                to="blog"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                onClick={handleNavLinkClick}
+                activeClass="active"
               >
-                <Link href={"/blog"} replace>
+                <motion.li
+                  className="block text-gray-500 hover:text-sky-400 mb-3 cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   Blog
-                </Link>
-              </motion.li>
+                </motion.li>
+              </ScrollLink>
             </ul>
           </motion.div>
         )}
