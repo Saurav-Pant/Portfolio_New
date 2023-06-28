@@ -158,7 +158,7 @@ const Projects = (props: Props) => {
               </div>
               <div className="p-4">
                 <div className="flex justify-between mt-2 gap-10">
-                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 list-none">
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 list-none absolute right-4">
                     <Link
                       href={project.githubUrl}
                       target="_blank"
@@ -171,7 +171,7 @@ const Projects = (props: Props) => {
                     </Link>
                   </li>
                   <span className="text-black">{project.name}</span>
-                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none">
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
                     <Link
                       href={project.liveUrl}
                       target="_blank"
@@ -195,29 +195,28 @@ const Projects = (props: Props) => {
 
 export default Projects;
 
-
-//   ,
-//   {
-//     "id": 2,
-//     "name": "Dietician Website",
-//     "category": "All,Landing Page",
-//     "image": "Assets/dietician-website.jpg"
-//   },
-//   {
-//     "id": 3,
-//     "name": "Github Finder",
-//     "category": "All,FrontEnd",
-//     "image": "Assets/github-finder.jpg"
-//   },
-//   {
-//     "id": 4,
-//     "name": "Blood Donation Project",
-//     "category": "All,MERN",
-//     "image": "Assets/blood-donation-project.jpg"
-//   },
-//   {
-//     "id": 5,
-//     "name": "Project 5",
-//     "category": "All,Web3",
-//     "image": "Assets/project-5.jpg"
-//   }
+// ,
+// {
+//   "id": 2,
+//   "name": "Dietician Website",
+//   "category": "All,Landing Page",
+//   "image": "Assets/dietician-website.jpg"
+// },
+// {
+//   "id": 3,
+//   "name": "Github Finder",
+//   "category": "All,FrontEnd",
+//   "image": "Assets/github-finder.jpg"
+// },
+// {
+//   "id": 4,
+//   "name": "Blood Donation Project",
+//   "category": "All,MERN",
+//   "image": "Assets/blood-donation-project.jpg"
+// },
+// {
+//   "id": 5,
+//   "name": "Project 5",
+//   "category": "All,Web3",
+//   "image": "Assets/project-5.jpg"
+// }
