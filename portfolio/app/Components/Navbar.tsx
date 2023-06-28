@@ -4,16 +4,15 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
-import { useRouter } from 'next/navigation'
-import { usePathname, useSearchParams } from 'next/navigation'
-
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface Props {}
 
 const Navbar: React.FC<Props> = (props: Props) => {
   const router = useRouter();
-  const pathname = usePathname()
-  
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -33,7 +32,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
       router.push("/");
     }
   };
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -75,12 +73,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
               className="rounded-full overflow-hidden cursor-pointer"
               onClick={handleLogoClick}
             >
-              <Image
-                src={logo}
-                alt="Logo"
-                width={40}
-                height={40}
-              />
+              <Image src={logo} alt="Logo" width={40} height={40} />
             </div>
           </span>
         </div>
@@ -114,7 +107,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
                 onClick={() => handleNavLinkClick("blog")}
               >
-                Blog
+                Blogs
               </li>
             </ul>
           </div>
@@ -161,7 +154,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handleNavLinkClick("blog")}
               >
-                Blog
+                Blogs
               </motion.li>
             </ul>
           </motion.div>
