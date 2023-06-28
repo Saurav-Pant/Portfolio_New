@@ -4,8 +4,7 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface Props {}
 
