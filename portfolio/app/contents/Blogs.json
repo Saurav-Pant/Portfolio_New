@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Server Side vs Client Side Rendering",
+    "link": "https://sauravblog.hashnode.dev/demystifying-client-side-server-side-rendering",
+    "img": "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "category": "Frontend,All"
+  },
+  {
+    "id": 2,
+    "title": "Removing Navbar/Footer on Login ",
+    "link": "https://sauravblog.hashnode.dev/removing-navbar-and-footer-on-loginregistration-page-a-cleaner-user-experience",
+    "img": "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "category": "Frontend,All"
+  },
+  {
+    "id": 3,
+    "title": "A Guide to Open Source Collaboration",
+    "link": "https://sauravblog.hashnode.dev/mastering-git-a-beginners-guide-to-open-source-collaboration",
+    "img": "./Assets/open-source_blog.png",
+    "category": "Open Source,All"
+  },
+  {
+    "id": 4,
+    "title": "Binary Search Algorithm",
+    "link": "https://sauravblog.hashnode.dev/binary-search-algorithm",
+    "img": "https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "category": "Frontend,All"
+  }
+]
