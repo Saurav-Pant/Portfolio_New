@@ -186,16 +186,22 @@ const Projects = (props: Props) => {
                   </li>
                   <span className="text-black">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
-                    <Link
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      // href={project.liveUrl}
+                      // {/* href="" */}
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      onClick={() =>
+                        alert(
+                          "This project is not hosted yet but will be hosted soon"
+                        )
+                      }
                     >
                       <FiExternalLink
                         size={20}
                         className="transition duration-300 ease-in-out"
                       />
-                    </Link>
+                    </button>
                   </li>
                 </div>
               </div>

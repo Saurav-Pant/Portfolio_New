@@ -33,9 +33,9 @@
   },
   {
     "id": 5,
-    "name": "PlayTube",
+    "name": "Youtube Clone",
     "category": "All,FrontEnd",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688032281/ytclone_xtwpvz.png",
     "githubUrl": "https://github.com/Saurav-Pant/YT-Clone",
     "liveUrl": "https://expense-tracker-saurav.netlify.app/"
   }
