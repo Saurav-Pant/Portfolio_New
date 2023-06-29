@@ -1,5 +1,5 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 type Props = {};
 
@@ -9,16 +9,16 @@ const BackToTop = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const show = scrollY > 200; 
+      const show = scrollY > 200;
       setShowButton(show);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -29,9 +29,7 @@ const BackToTop = (props: Props) => {
           className="fixed bottom-8 right-8 p-4 rounded-full bg-sky-500 text-white border-none cursor-pointer z-10 
           "
         >
-          <span
-          className='text-2xl animate-bounce'
-          >↑</span>
+          <span className="text-2xl animate-bounce">↑</span>
         </button>
       )}
     </div>
