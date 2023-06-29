@@ -147,7 +147,7 @@ const Projects = (props: Props) => {
               key={project.id}
               className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
             >
-              <div className="relative h-72 w-80">
+              <div className="relative h-56 w-72">
                 <Image
                   src={project.image}
                   alt="Project Image"
@@ -194,29 +194,3 @@ const Projects = (props: Props) => {
 };
 
 export default Projects;
-
-// ,
-// {
-//   "id": 2,
-//   "name": "Dietician Website",
-//   "category": "All,Landing Page",
-//   "image": "Assets/dietician-website.jpg"
-// },
-// {
-//   "id": 3,
-//   "name": "Github Finder",
-//   "category": "All,FrontEnd",
-//   "image": "Assets/github-finder.jpg"
-// },
-// {
-//   "id": 4,
-//   "name": "Blood Donation Project",
-//   "category": "All,MERN",
-//   "image": "Assets/blood-donation-project.jpg"
-// },
-// {
-//   "id": 5,
-//   "name": "Project 5",
-//   "category": "All,Web3",
-//   "image": "Assets/project-5.jpg"
-// }
