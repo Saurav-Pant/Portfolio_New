@@ -112,37 +112,31 @@ const Blog = (props: Props) => {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center items-center">
+      <motion.div
+        className="flex flex-wrap justify-center items-center gap-10"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+      >
         {filteredBlogs.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">No blogs found</div>
         ) : (
           filteredBlogs.map((blog) => (
-            <motion.div
+            <div
               key={blog.id}
-              initial={{
-                opacity: 0,
-                y: 100,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: 100,
-              }}
-              transition={{ duration: 0.3 }}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden"
+              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden "
             >
-              <div>
-                <Image
-                  src={blog.img}
-                  alt="blog"
-                  width={300}
-                  height={200}
-                  className="rounded-t-md"
-                  style={{ objectFit: "contain" }}
-                />
+              <div className="relative h-56 w-72">
+                <Image src={blog.img} alt="blog" className="rounded-t-md"
+                 layout="fill"
+                 objectFit="cover"
+                  />
               </div>
               <div className="p-4">
                 <motion.div
@@ -153,10 +147,10 @@ const Blog = (props: Props) => {
                   <Link href={blog.link}>{blog.title}</Link>
                 </motion.div>
               </div>
-            </motion.div>
+            </div>
           ))
         )}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
