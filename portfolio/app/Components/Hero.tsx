@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
@@ -27,20 +27,44 @@ const Hero: React.FC<Props> = (props: Props) => {
   return (
     <div
       className={`h-[90vh] bg-cover bg-center relative ${
-        isScrolled ? "bg-white" : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
+        isScrolled
+          ? "bg-white"
+          : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
       } transition-all duration-500`}
       id="Hero_Section"
     >
-      <div className="flex flex-col items-center justify-center h-full text-center text-4xl">
+      <motion.div
+        className="flex flex-col items-center justify-center h-full text-center text-4xl"
+        initial={{
+          opacity: 0,
+          y: 100,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <HeadingText>Saurav Pant</HeadingText>
         <p className="">
           <span className="text-xl bg-gradient-to-r from-sky-200 to-blue-500 bg-clip-text text-transparent">
             Full Stack Developer
           </span>
         </p>
-      </div>
+      </motion.div>
       {/* Down Icon */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4">
+      <motion.div
+        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4"
+        initial={{
+          opacity: 0,
+          y: 130,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.9, delay: 0.5 }}
+      >
         <ScrollLink
           to="about"
           smooth={true}
@@ -61,16 +85,21 @@ const Hero: React.FC<Props> = (props: Props) => {
             />
           </svg>
         </ScrollLink>
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{
           opacity: 0,
+          x: 100,
         }}
         animate={{
           opacity: 1,
+          x: 0,
         }}
-        transition={{ duration: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+        }}
       >
         {/* Social Icons */}
         <ul className="absolute bottom-12 left-4 flex flex-col gap-4">
