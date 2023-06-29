@@ -9,6 +9,7 @@ import frontend from "../Assets/frontend_logo.png";
 import backend from "../Assets/backend_logo.png";
 import all from "../Assets/all_logo.png";
 import web3 from "../Assets/web3.png";
+import { motion } from "framer-motion";
 
 type Project = {
   id: number;
@@ -46,7 +47,7 @@ const Projects = (props: Props) => {
     },
     {
       id: 3,
-      name: "Front End",
+      name: "FrontEnd",
     },
     {
       id: 4,
@@ -72,7 +73,7 @@ const Projects = (props: Props) => {
       </div>
       <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
         {categories.map((category) => (
-          <button
+          <motion.button
             key={category.id}
             className={`relative border-2 border-blue-400 px-2 py-2 rounded-md ${
               selectedCategory === category.name ? "bg-blue-300 text-white" : ""
@@ -80,6 +81,16 @@ const Projects = (props: Props) => {
             onClick={() => handleCategoryClick(category.name)}
             onMouseEnter={() => handleCategoryHover(category.name)}
             onMouseLeave={() => handleCategoryHover("")}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
           >
             {category.name === "Landing Page" && (
               <div className="inline-block w-4 h-4 mr-1">
@@ -97,7 +108,7 @@ const Projects = (props: Props) => {
                 <Image src={all} alt="all icon" width={16} height={16} />
               </div>
             )}
-            {category.name === "Front End" && (
+            {category.name === "FrontEnd" && (
               <div className="inline-block w-4 h-4 mr-1">
                 <Image
                   src={frontend}
@@ -133,10 +144,22 @@ const Projects = (props: Props) => {
                 {category.name}
               </div>
             )}
-          </button>
+          </motion.button>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center items-center mt-28">
+      <motion.div
+        className="flex flex-wrap justify-center items-center mt-28"
+        initial={{ opacity: 0, y: -100 }}
+        exit={{ opacity: 0, y: -25 }}
+        transition={{ duration: 0.5 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+          },
+        }}
+      >
         {filteredProjects.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">
             No projects found
@@ -188,7 +211,7 @@ const Projects = (props: Props) => {
             </div>
           ))
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
