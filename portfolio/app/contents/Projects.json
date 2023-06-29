@@ -30,5 +30,13 @@
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
     "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
     "liveUrl": "https://expense-tracker-saurav.netlify.app/"
+  },
+  {
+    "id": 5,
+    "name": "PlayTube",
+    "category": "All,FrontEnd",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
+    "githubUrl": "https://github.com/Saurav-Pant/YT-Clone",
+    "liveUrl": "https://expense-tracker-saurav.netlify.app/"
   }
 ]

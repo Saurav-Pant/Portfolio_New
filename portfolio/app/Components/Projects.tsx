@@ -159,7 +159,7 @@ const Projects = (props: Props) => {
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
+              className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
             >
               <div className="relative h-56 w-72">
                 <Image

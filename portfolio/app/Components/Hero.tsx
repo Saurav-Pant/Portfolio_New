@@ -54,7 +54,7 @@ const Hero: React.FC<Props> = (props: Props) => {
       </motion.div>
       {/* Down Icon */}
       <motion.div
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4"
+        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4 "
         initial={{
           opacity: 0,
           y: 130,
@@ -69,12 +69,15 @@ const Hero: React.FC<Props> = (props: Props) => {
           to="about"
           smooth={true}
           duration={500}
-          className="text-gray-400 hover:text-black cursor-pointer order-2"
+          className="text-black hover:text-blue-500 cursor-pointer order-2"
         >
           {/* Down Icon SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 animate-bounce rounded-full border border-gray-400 p-1"
+            className="h-10 w-10 animate-bounce rounded-full p-1 
+            hover:bg-blue-400 border-blue-400 hover:border-blue-500 hover:text-white
+            transition duration-300 ease-in-out
+            order-1"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
