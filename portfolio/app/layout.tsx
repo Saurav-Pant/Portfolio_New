@@ -1,3 +1,4 @@
+import BackToTop from "./Components/BackToTop";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="">
         <Navbar />
         {children}
+        <BackToTop/>
         <Footer />
       </body>
     </html>

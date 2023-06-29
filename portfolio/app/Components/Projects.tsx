@@ -9,6 +9,7 @@ import frontend from "../Assets/frontend_logo.png";
 import backend from "../Assets/backend_logo.png";
 import all from "../Assets/all_logo.png";
 import web3 from "../Assets/web3.png";
+import { motion } from "framer-motion";
 
 type Project = {
   id: number;
@@ -46,7 +47,7 @@ const Projects = (props: Props) => {
     },
     {
       id: 3,
-      name: "Front End",
+      name: "FrontEnd",
     },
     {
       id: 4,
@@ -72,7 +73,7 @@ const Projects = (props: Props) => {
       </div>
       <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
         {categories.map((category) => (
-          <button
+          <motion.button
             key={category.id}
             className={`relative border-2 border-blue-400 px-2 py-2 rounded-md ${
               selectedCategory === category.name ? "bg-blue-300 text-white" : ""
@@ -80,6 +81,10 @@ const Projects = (props: Props) => {
             onClick={() => handleCategoryClick(category.name)}
             onMouseEnter={() => handleCategoryHover(category.name)}
             onMouseLeave={() => handleCategoryHover("")}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
           >
             {category.name === "Landing Page" && (
               <div className="inline-block w-4 h-4 mr-1">
@@ -97,7 +102,7 @@ const Projects = (props: Props) => {
                 <Image src={all} alt="all icon" width={16} height={16} />
               </div>
             )}
-            {category.name === "Front End" && (
+            {category.name === "FrontEnd" && (
               <div className="inline-block w-4 h-4 mr-1">
                 <Image
                   src={frontend}
@@ -133,10 +138,19 @@ const Projects = (props: Props) => {
                 {category.name}
               </div>
             )}
-          </button>
+          </motion.button>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center items-center mt-28">
+      <motion.div
+        className="flex flex-wrap justify-center items-center mt-28"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+      >
         {filteredProjects.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">
             No projects found
@@ -145,9 +159,9 @@ const Projects = (props: Props) => {
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
+              className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
             >
-              <div className="relative h-72 w-80">
+              <div className="relative h-56 w-72">
                 <Image
                   src={project.image}
                   alt="Project Image"
@@ -172,51 +186,31 @@ const Projects = (props: Props) => {
                   </li>
                   <span className="text-black">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
-                    <Link
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      // href={project.liveUrl}
+                      // {/* href="" */}
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      onClick={() =>
+                        alert(
+                          "This project is not hosted yet but will be hosted soon"
+                        )
+                      }
                     >
                       <FiExternalLink
                         size={20}
                         className="transition duration-300 ease-in-out"
                       />
-                    </Link>
+                    </button>
                   </li>
                 </div>
               </div>
             </div>
           ))
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default Projects;
-
-// ,
-// {
-//   "id": 2,
-//   "name": "Dietician Website",
-//   "category": "All,Landing Page",
-//   "image": "Assets/dietician-website.jpg"
-// },
-// {
-//   "id": 3,
-//   "name": "Github Finder",
-//   "category": "All,FrontEnd",
-//   "image": "Assets/github-finder.jpg"
-// },
-// {
-//   "id": 4,
-//   "name": "Blood Donation Project",
-//   "category": "All,MERN",
-//   "image": "Assets/blood-donation-project.jpg"
-// },
-// {
-//   "id": 5,
-//   "name": "Project 5",
-//   "category": "All,Web3",
-//   "image": "Assets/project-5.jpg"
-// }
