@@ -81,10 +81,10 @@ const Projects = (props: Props) => {
             onClick={() => handleCategoryClick(category.name)}
             onMouseEnter={() => handleCategoryHover(category.name)}
             onMouseLeave={() => handleCategoryHover("")}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              y: 0,
               transition: {
                 duration: 0.5,
               },
@@ -150,15 +150,9 @@ const Projects = (props: Props) => {
       <motion.div
         className="flex flex-wrap justify-center items-center mt-28"
         initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -25 }}
         transition={{ duration: 0.5 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.5,
-          },
-        }}
       >
         {filteredProjects.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">
