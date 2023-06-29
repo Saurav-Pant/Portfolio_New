@@ -14,7 +14,7 @@ const Hero: React.FC<Props> = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
-      setIsScrolled(scrollTop > 50);
+      setIsScrolled(scrollTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,7 +28,7 @@ const Hero: React.FC<Props> = (props: Props) => {
     <div
       className={`h-[90vh] bg-cover bg-center relative ${
         isScrolled
-          ? "bg-white"
+          ? "bg-opacity-30 transition-all duration-1000  "
           : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
       } transition-all duration-500`}
       id="Hero_Section"
