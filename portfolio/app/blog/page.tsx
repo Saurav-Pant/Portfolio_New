@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Heading2 } from "../Components/Heading_Text";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,31 +34,6 @@ const Blog = (props: Props) => {
   };
 
   const categories = ["All", "Frontend", "Backend", "Open Source", "Web3"];
-
-  // Animation controls
-  const controls = useAnimation();
-
-  // Detect if the blog container is in view
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const [containerInView, setContainerInView] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        containerRef.current &&
-        window.innerHeight > containerRef.current.getBoundingClientRect().top
-      ) {
-        setContainerInView(true);
-        controls.start("visible");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
 
   return (
     <motion.div
@@ -137,10 +112,7 @@ const Blog = (props: Props) => {
           </motion.div>
         ))}
       </div>
-      <div
-        className="flex flex-wrap justify-center items-center"
-        ref={containerRef}
-      >
+      <div className="flex flex-wrap justify-center items-center">
         {filteredBlogs.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">No blogs found</div>
         ) : (
@@ -149,20 +121,17 @@ const Blog = (props: Props) => {
               key={blog.id}
               initial={{
                 opacity: 0,
-                y: containerInView ? 0 : 100,
+                y: 100,
               }}
               animate={{
                 opacity: 1,
-                y: containerInView ? 0 : 100,
+                y: 0,
               }}
               exit={{
                 opacity: 0,
-                y: containerInView ? 0 : 100,
+                y: 100,
               }}
-              transition={{
-                duration: 0.7,
-                delay: 0.2,
-              }}
+              transition={{ duration: 0.3 }}
               className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden"
             >
               <div>
