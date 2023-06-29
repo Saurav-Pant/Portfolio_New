@@ -40,7 +40,7 @@ const Blog = (props: Props) => {
       className="min-h-screen px-16 pt-24 gap-6"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+      exit={{ opacity: 0, y: -25 }}
       transition={{ duration: 0.5 }}
     >
       <span className="flex flex-col justify-center items-start text-left md:w-1/2">
