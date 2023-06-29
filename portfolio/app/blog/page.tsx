@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { Heading2 } from "../Components/Heading_Text";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +34,31 @@ const Blog = (props: Props) => {
   };
 
   const categories = ["All", "Frontend", "Backend", "Open Source", "Web3"];
+
+  // Animation controls
+  const controls = useAnimation();
+
+  // Detect if the blog container is in view
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [containerInView, setContainerInView] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        containerRef.current &&
+        window.innerHeight > containerRef.current.getBoundingClientRect().top
+      ) {
+        setContainerInView(true);
+        controls.start("visible");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   return (
     <motion.div
@@ -112,24 +137,35 @@ const Blog = (props: Props) => {
           </motion.div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center items-center">
+      <div
+        className="flex flex-wrap justify-center items-center"
+        ref={containerRef}
+      >
         {filteredBlogs.length === 0 ? (
           <div className="text-center mt-10 animate-bounce">No blogs found</div>
         ) : (
           filteredBlogs.map((blog) => (
             <motion.div
               key={blog.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
+              initial={{
+                opacity: 0,
+                y: containerInView ? 0 : 100,
+              }}
+              animate={{
+                opacity: 1,
+                y: containerInView ? 0 : 100,
+              }}
+              exit={{
+                opacity: 0,
+                y: containerInView ? 0 : 100,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+              }}
               className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden"
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              >
+              <div>
                 <Image
                   src={blog.img}
                   alt="blog"
@@ -138,7 +174,7 @@ const Blog = (props: Props) => {
                   className="rounded-t-md"
                   style={{ objectFit: "contain" }}
                 />
-              </motion.div>
+              </div>
               <div className="p-4">
                 <motion.div
                   initial={{ opacity: 0 }}
