@@ -13,7 +13,6 @@ import {
   SiGithub,
   SiReact,
   SiNextdotjs,
-  SiTypescript,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
@@ -92,8 +91,8 @@ const About = (props: Props) => {
         <div className="flex flex-col justify-center items-start text-left md:w-1/2">
           <Heading2>About</Heading2>
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
               duration: 0.8,
