@@ -2,7 +2,7 @@
 import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
-import sp from "../Assets/check.png";
+import sp from "../Assets/about_bg.png";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
 
@@ -137,8 +137,17 @@ const About = (props: Props) => {
         </div>
 
         <div className="flex justify-center items-center md:w-1/2 sm:py-8 py-10">
-          <div>
-            <Image src={sp} alt="Saurav Pant" width={400} height={400} />
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-75 rounded-lg z-0"></div>
+            <div className="relative z-10">
+              <Image
+                src={sp}
+                alt="Saurav Pant"
+                width={400}
+                height={400}
+                className="rounded-full"
+              />
+            </div>
           </div>
         </div>
       </div>
