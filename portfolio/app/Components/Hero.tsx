@@ -69,15 +69,12 @@ const Hero: React.FC<Props> = (props: Props) => {
           to="about"
           smooth={true}
           duration={500}
-          className="text-black hover:text-blue-500 cursor-pointer order-2"
+          className="text-black hover:text-blue-500 cursor-pointer order-2 "
         >
           {/* Down Icon SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 animate-bounce rounded-full p-1 
-            hover:bg-blue-400 border-blue-400 hover:border-blue-500 hover:text-white
-            transition duration-300 ease-in-out
-            order-1"
+            className="h-10 w-10 animate-bounce rounded-full p-1 hover:bg-blue-400 border border-blue-400 hover:text-white transition duration-300 ease-in-out order-1"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -112,7 +109,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub size={32} />
+              <FaGithub className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
             </Link>
           </li>
           <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600">
@@ -121,7 +118,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter size={32} />
+              <FaTwitter className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
             </Link>
           </li>
           <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-blue-500">
@@ -130,7 +127,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin size={32} />
+              <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
             </Link>
           </li>
         </ul>
