@@ -152,7 +152,13 @@ const Blog = (props: Props) => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4 }}
                 >
-                  <Link href={blog.link}>{blog.title}</Link>
+                  <Link
+                    href={blog.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {blog.title}
+                  </Link>
                 </motion.div>
               </div>
             </div>

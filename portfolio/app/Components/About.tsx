@@ -2,7 +2,7 @@
 import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
-import sp from "../Assets/about_bg.png";
+import sp from "../Assets/check.png";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
 
