@@ -138,7 +138,7 @@ const About = (props: Props) => {
 
         <div className="flex justify-center items-center md:w-1/2 sm:py-8 py-10">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-75 rounded-lg z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-blue-400 opacity-75 rounded-lg z-0"></div>
             <div className="relative z-10">
               <Image
                 src={sp}
