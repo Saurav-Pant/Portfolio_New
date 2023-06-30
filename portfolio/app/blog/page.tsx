@@ -125,7 +125,9 @@ const Blog = (props: Props) => {
         }}
       >
         {filteredBlogs.length === 0 ? (
-          <div className="text-center mt-10 animate-bounce">No blogs found</div>
+          <div className="flex justify-center items-center text-center mt-10 animate-bounce text-2xl font-bold text-blue-500">
+            No Blogs found
+          </div>
         ) : (
           filteredBlogs.map((blog) => (
             <div
@@ -133,10 +135,13 @@ const Blog = (props: Props) => {
               className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden "
             >
               <div className="relative h-56 w-72">
-                <Image src={blog.img} alt="blog" className="rounded-t-md"
-                 layout="fill"
-                 objectFit="cover"
-                  />
+                <Image
+                  src={blog.img}
+                  alt="blog"
+                  className="rounded-t-md"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
               <div className="p-4">
                 <motion.div

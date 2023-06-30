@@ -152,7 +152,8 @@ const Projects = (props: Props) => {
         }}
       >
         {filteredProjects.length === 0 ? (
-          <div className="text-center mt-10 animate-bounce">
+          <div className="flex justify-center items-center text-center mt-10 animate-bounce 
+          text-2xl font-bold text-blue-500">
             No projects found
           </div>
         ) : (
