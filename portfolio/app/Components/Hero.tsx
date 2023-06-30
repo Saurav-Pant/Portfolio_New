@@ -26,7 +26,7 @@ const Hero: React.FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`h-[90vh] bg-cover bg-center relative ${
+      className={`h-[90vh] max-sm:h-[60vh] bg-cover bg-center relative ${
         isScrolled
           ? "bg-opacity-30 transition-all duration-1000  "
           : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
