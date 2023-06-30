@@ -134,7 +134,10 @@ const Blog = (props: Props) => {
               key={blog.id}
               className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden "
             >
-              <div className="relative h-56 w-72">
+              <div
+                className="relative h-56 w-72 bg-cover 
+              bg-center"
+              >
                 <Image
                   src={blog.img}
                   alt="blog"
