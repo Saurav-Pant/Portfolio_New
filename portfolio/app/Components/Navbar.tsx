@@ -5,6 +5,8 @@ import Image from "next/image";
 import logo from "../Assets/logo.png";
 import { motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
+import ThemeButton from "./ThemeButton";
+import { useTheme } from "next-themes";
 
 interface Props {}
 
@@ -15,6 +17,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const navbarRef = useRef<HTMLDivElement>(null);
+  const { theme, setTheme } = useTheme();
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -64,7 +67,11 @@ const Navbar: React.FC<Props> = (props: Props) => {
     <div>
       <nav
         ref={navbarRef}
-        className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-white via-blue-50 to-blue-200 fixed w-full z-50 top-0 shadow-md"
+        className={`flex items-center justify-between flex-wrap p-4 ${
+          theme === "dark"
+            ? "bg-gradient-to-r from-black via-gray-700 to-gray-900"
+            : "bg-gradient-to-r from-white via-blue-50 to-blue-200"
+        } fixed w-full z-50 top-0 shadow-md`}
       >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
@@ -107,6 +114,9 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 onClick={() => handleNavLinkClick("blog")}
               >
                 Blogs
+              </li>
+              <li>
+                <ThemeButton />
               </li>
             </ul>
           </div>
