@@ -1,58 +1,49 @@
 "use client";
-import React, { useState, useEffect, Children } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { BsSunFill } from "react-icons/bs";
+import { RiMoonClearFill } from "react-icons/ri";
 
 type Props = {};
 
 const ThemeButton = (props: Props) => {
   const { theme, setTheme } = useTheme();
-  const [Mounted, setMounted] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!Mounted) {
+  if (!mounted) {
     return null;
   }
 
   return (
-
-    <button
-      aria-label="Toggle Dark Mode"
-      type="button"
-      className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
-      {theme === "dark" ? (
-        <svg
-          className="w-4 h-4 text-gray-800 dark:text-gray-200"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+    <div className="item-navbar flex items-center">
+      <div className="flex items-center gap-3">
+        <li className="md:flex flex-col-reverse hidden">
+          <input
+            onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+            checked={theme === "dark"}
+            className="hidden"
+            type="checkbox"
+            id="dark-mode-toggle"
           />
-        </svg>
-      ) : (
-        <svg
-          className="w-4 h-4 text-gray-800 dark:text-gray-200"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
-        </svg>
-      )}
-    </button>
+          <label
+            className={`w-14 h-8 flex items-center rounded-full cursor-pointer ${
+              theme === "dark" ? "bg-gray-800" : "bg-gray-200"
+            }`}
+            htmlFor="dark-mode-toggle"
+          >
+            <div
+              className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${
+                theme === "dark" ? "translate-x-6" : "translate-x-0"
+              }`}
+            ></div>
+          </label>
+        </li>
+      </div>
+    </div>
   );
 };
 

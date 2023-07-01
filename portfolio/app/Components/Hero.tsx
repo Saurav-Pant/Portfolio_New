@@ -5,11 +5,13 @@ import Link from "next/link";
 import { HeadingText } from "./Heading_Text";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
+import { useTheme } from "next-themes";
 
 interface Props {}
 
 const Hero: React.FC<Props> = (props: Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +29,8 @@ const Hero: React.FC<Props> = (props: Props) => {
   return (
     <div
       className={`h-[90vh] bg-cover bg-center relative ${
-        isScrolled
-          ? "bg-opacity-30 transition-all duration-1000  "
+        theme === "dark"
+          ? "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-700"
           : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
       } transition-all duration-500`}
       id="Hero_Section"

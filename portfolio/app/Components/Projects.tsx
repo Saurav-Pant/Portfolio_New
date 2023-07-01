@@ -119,6 +119,7 @@ const Projects = (props: Props) => {
                   alt="backend icon"
                   width={16}
                   height={16}
+                  color="red"
                 />
               </div>
             )}
@@ -134,7 +135,7 @@ const Projects = (props: Props) => {
               </div>
             )}
             {hoveredCategory === category.name && (
-              <div className="opacity-100 absolute top-full left-1/2 -translate-x-1/2 translate-y-1/2 bg-white px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+              <div className="opacity-100 absolute top-full left-1/2 -translate-x-1/2 translate-y-1/2 px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
                 {category.name}
               </div>
             )}
