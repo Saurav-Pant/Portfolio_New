@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
 import ThemeButton from "./ThemeButton";
 import { useTheme } from "next-themes";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 interface Props {}
 
@@ -166,6 +167,18 @@ const Navbar: React.FC<Props> = (props: Props) => {
                 Blogs
               </motion.li>
             </ul>
+            <div
+              className={`block text-gray-500 hover:text-sky-400 mr-4 mb-3 cursor-pointer relative top-96 left-5 ${
+                theme === "dark" ? "dark" : "light"
+              }`}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <FaMoon className="w-8 h-8" />
+              ) : (
+                <FaSun className="w-8 h-8" />
+              )}
+            </div>
           </motion.div>
         )}
       </nav>
