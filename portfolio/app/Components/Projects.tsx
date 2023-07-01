@@ -153,15 +153,17 @@ const Projects = (props: Props) => {
         }}
       >
         {filteredProjects.length === 0 ? (
-          <div className="flex justify-center items-center text-center mt-10 animate-bounce 
-          text-2xl font-bold text-blue-500">
+          <div
+            className="flex justify-center items-center text-center mt-10 animate-bounce 
+          text-2xl font-bold text-blue-500"
+          >
             No projects found
           </div>
         ) : (
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform"
+              className="flex flex-col justify-center items-center m-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
               <div className="relative h-56 w-72">
                 <Image
@@ -174,7 +176,7 @@ const Projects = (props: Props) => {
               </div>
               <div className="p-4">
                 <div className="flex justify-between mt-2 gap-10">
-                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 list-none absolute right-4">
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 dark:text-gray-300 list-none absolute right-4">
                     <Link
                       href={project.githubUrl}
                       target="_blank"
@@ -182,17 +184,15 @@ const Projects = (props: Props) => {
                     >
                       <FiGithub
                         size={20}
-                        className="hover:text-black transition duration-300 ease-in-out"
+                        className="hover:text-black dark:hover:text-white transition duration-300 ease-in-out"
                       />
                     </Link>
                   </li>
-                  <span className="text-black">{project.name}</span>
-                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
+                  <span className="text-black dark:text-white">
+                    {project.name}
+                  </span>
+                  <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 list-none absolute left-4">
                     <button
-                      // href={project.liveUrl}
-                      // {/* href="" */}
-                      // target="_blank"
-                      // rel="noopener noreferrer"
                       onClick={() =>
                         alert(
                           "This project is not hosted yet but will be hosted soon"

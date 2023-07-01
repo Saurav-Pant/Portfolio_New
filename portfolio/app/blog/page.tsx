@@ -132,7 +132,7 @@ const Blog = (props: Props) => {
           filteredBlogs.map((blog) => (
             <div
               key={blog.id}
-              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden "
+              className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1"
             >
               <div
                 className="relative h-56 w-72 bg-cover 
@@ -146,7 +146,7 @@ const Blog = (props: Props) => {
                   objectFit="cover"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 text-sky-500">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

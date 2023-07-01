@@ -10,21 +10,23 @@ import { useTheme } from "next-themes";
 interface Props {}
 
 const Hero: React.FC<Props> = (props: Props) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      setIsScrolled(scrollTop > 100);
-    };
+  // Unavailable due to Dark Theme
 
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = window.pageYOffset;
+  //     setIsScrolled(scrollTop > 100);
+  //   };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div
