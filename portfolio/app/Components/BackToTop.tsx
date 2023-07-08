@@ -10,7 +10,7 @@ const BackToTop = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const show = scrollY > 200;
+      const show = scrollY > 180;
       setShowButton(show);
     };
 
