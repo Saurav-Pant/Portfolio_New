@@ -30,15 +30,15 @@
   {
     "id": 5,
     "title": "REST API Explained",
-    "link": "https://sauravblog.hashnode.dev/the-power-of-cdns-enhancing-speed-and-efficiency#heading-leveraging-caching-and-local-delivery",
-    "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688918186/CDN_EXPLAINED2_d3fgzz.png",
+    "link": "https://www.showwcase.com/show/35786/demystifying-rest-api-a-beginners-guide",
+    "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688490445/Resi_API_2_ajfoqu.png",
     "category": "Backend,All"
   },
   {
     "id": 6,
     "title": "CDN Explained",
-    "link": "",
-    "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688490445/Resi_API_2_ajfoqu.png",
+    "link": "https://sauravblog.hashnode.dev/the-power-of-cdns-enhancing-speed-and-efficiency#heading-leveraging-caching-and-local-delivery",
+    "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688918186/CDN_EXPLAINED2_d3fgzz.png",
     "category": "Backend,All"
   }
 ]
