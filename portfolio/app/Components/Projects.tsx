@@ -43,7 +43,7 @@ const Projects = (props: Props) => {
     },
     {
       id: 2,
-      name: "Landing Page",
+      name: "LandingPage",
     },
     {
       id: 3,
@@ -86,14 +86,14 @@ const Projects = (props: Props) => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
           >
-            {category.name === "Landing Page" && (
+            {category.name === "LandingPage" && (
               <div className="inline-block w-4 h-4 mr-1">
                 <Image
                   src={landing}
                   alt="backend icon"
                   width={16}
                   height={16}
-                  title="Landing Page"
+                  title="LandingPage"
                 />
               </div>
             )}
@@ -135,7 +135,7 @@ const Projects = (props: Props) => {
               </div>
             )}
             {hoveredCategory === category.name && (
-              <div className="opacity-100 absolute top-full left-1/2 -translate-x-1/2 translate-y-1/2 px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
+              <div className="opacity-100 absolute bg-blue-500 text-white top-full left-1/2 -translate-x-1/2 translate-y-1/2 px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
                 {category.name}
               </div>
             )}
@@ -188,7 +188,7 @@ const Projects = (props: Props) => {
                       />
                     </Link>
                   </li>
-                  <span className="text-black">{project.name}</span>
+                  <span className="text-blue-500">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
                     <button
                       // href={project.liveUrl}
