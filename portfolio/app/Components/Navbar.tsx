@@ -126,8 +126,8 @@ const Navbar: React.FC<Props> = (props: Props) => {
         {isOpen && (
           <motion.div
             className="w-full block flex-grow lg:flex lg:items-center lg:w-auto h-screen relative top-10 shadow-black"
-            initial={{ opacity: 0, y: -70 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -70 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.7,
               type: "spring",
