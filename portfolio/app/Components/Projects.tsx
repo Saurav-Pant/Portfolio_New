@@ -161,9 +161,12 @@ const Projects = (props: Props) => {
           </div>
         ) : (
           filteredProjects.map((project) => (
-            <div
+            <motion.div
               key={project.id}
               className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
+              whileHover={{
+                boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.5)", // Border effect on hover
+              }}
             >
               <div className="relative h-56 w-72">
                 <Image
@@ -191,10 +194,6 @@ const Projects = (props: Props) => {
                   <span className="text-blue-500">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
                     <button
-                      // href={project.liveUrl}
-                      // {/* href="" */}
-                      // target="_blank"
-                      // rel="noopener noreferrer"
                       onClick={() =>
                         alert(
                           "This project is not hosted yet but will be hosted soon"
@@ -209,7 +208,7 @@ const Projects = (props: Props) => {
                   </li>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))
         )}
       </motion.div>
