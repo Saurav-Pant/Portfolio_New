@@ -89,7 +89,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
           <div className="block">
             <button
               id="nav-toggle"
-              className="flex items-center px-3 py-2 rounded cursor-default"
+              className="flex items-center px-3 py-2 rounded cursor-default hover:bg-sky-400 transition-colors duration-500 ease-in-out"
               onClick={toggle}
             >
               {isOpen ? <RiCloseLine size={20} /> : <RiMenuLine size={20} />}
@@ -130,9 +130,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.7,
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
             }}
             style={{ pointerEvents: "auto" }}
           >
