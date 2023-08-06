@@ -40,7 +40,7 @@ body{
 
 ::-webkit-scrollbar-corner {
   background-color: #f2f2f2;
-  border-radius: 4px; /* Rounded corners for the scrollbar corner */
+  border-radius: 5px; 
 }
 
 ::-webkit-scrollbar-corner:hover {
