@@ -18,7 +18,6 @@ const ThemeButton = (props: Props) => {
     return null;
   }
 
-  // For Toggle Theme
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
