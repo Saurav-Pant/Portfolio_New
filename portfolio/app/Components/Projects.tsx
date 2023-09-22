@@ -194,11 +194,7 @@ const Projects = (props: Props) => {
                   <span className="text-blue-500">{project.name}</span>
                   <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600 list-none absolute left-4">
                     <button
-                      onClick={() =>
-                        alert(
-                          "This project is not hosted yet but will be hosted soon"
-                        )
-                      }
+                      onClick={() => window.open(project.liveUrl, "_blank")}
                     >
                       <FiExternalLink
                         size={20}

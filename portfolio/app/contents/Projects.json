@@ -9,14 +9,6 @@
   },
   {
     "id": 2,
-    "name": "Todo App",
-    "category": "All,MERN",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688035400/todo2_fjbq3i.png",
-    "githubUrl": "https://github.com/Saurav-Pant/MERN-Projects/tree/main/01_Todo_App",
-    "liveUrl": "https://expense-tracker-saurav.netlify.app/"
-  },
-  {
-    "id": 3,
     "name": "Github Finder",
     "category": "All,FrontEnd",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688035516/Github_Finder_tw5mie.png",
@@ -24,16 +16,16 @@
     "liveUrl": "https://github-profile-finder-01.vercel.app/"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "Blood Donation Project",
     "category": "All,MERN",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
     "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
-    "liveUrl": "https://expense-tracker-saurav.netlify.app/"
+    "liveUrl": "https://blood-donation-project.vercel.app/"
   },
   {
-    "id": 5,
-    "name": "Youtube Clone",
+    "id": 4,
+    "name": "Video Hub",
     "category": "All,FrontEnd",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688032281/ytclone_xtwpvz.png",
     "githubUrl": "https://github.com/Saurav-Pant/YT-Clone",
@@ -43,7 +35,7 @@
     "id": 5,
     "name": "College Review Hub",
     "category": "All,FrontEnd",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688032281/ytclone_xtwpvz.png",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1695406492/CR_canva_pnwzsl.png",
     "githubUrl": "https://github.com/Saurav-Pant/CollegeReviewHub",
     "liveUrl": "https://college-review-hub2.vercel.app/"
   }
