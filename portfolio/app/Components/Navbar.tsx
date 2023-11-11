@@ -91,19 +91,19 @@ const Navbar: React.FC<Props> = (props: Props) => {
           <div className="sm:flex hidden pr-10">
             <ul className={isOpen ? "hidden" : "flex"}>
               <li
-                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                className="inline-block text-gray-300 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
                 onClick={() => handleNavLinkClick("about")}
               >
                 About
               </li>
               <li
-                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                className="inline-block text-gray-300 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
                 onClick={() => handleNavLinkClick("projects")}
               >
                 Projects
               </li>
               <li
-                className="inline-block text-gray-500 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
+                className="inline-block text-gray-300 hover:text-white transition-colors duration-500 ease-in-out mr-4 cursor-pointer"
                 onClick={() => handleNavLinkClick("blog")}
               >
                 Blogs
