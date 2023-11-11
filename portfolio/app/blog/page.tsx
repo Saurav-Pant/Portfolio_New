@@ -9,6 +9,7 @@ import frontend from "../Assets/frontend_logo.png";
 import backend from "../Assets/backend_logo.png";
 import OpenSource from "../Assets/open-source.png";
 import web3 from "../Assets/web3.png";
+import StarsCanvas from "../Components/StarBackground";
 
 type Props = {};
 
@@ -43,6 +44,8 @@ const Blog = (props: Props) => {
       exit={{ opacity: 0, y: -25 }}
       transition={{ duration: 0.5 }}
     >
+      <StarsCanvas />
+
       <span className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2>Blogs</Heading2>
       </span>

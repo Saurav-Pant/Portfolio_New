@@ -1,42 +1,22 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { HeadingText } from "./Heading_Text";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
-import { useTheme } from "next-themes";
+import StarsCanvas from "./StarBackground";
 
 interface Props {}
 
 const Hero: React.FC<Props> = (props: Props) => {
-  // const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  // Unavailable due to Dark Theme
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollTop = window.pageYOffset;
-  //     setIsScrolled(scrollTop > 100);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <div
-      className={`h-[90vh] bg-cover bg-center relative ${
-        theme === "dark"
-          ? "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-700"
-          : "bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50"
-      } transition-all duration-500`}
+      className="h-[90vh] bg-cover bg-center relative 
+          bg-black"
       id="Hero_Section"
     >
+      <StarsCanvas />
       <motion.div
         className="flex flex-col items-center justify-center h-full text-center text-4xl"
         initial={{
@@ -75,10 +55,9 @@ const Hero: React.FC<Props> = (props: Props) => {
           duration={500}
           className="text-black hover:text-blue-500 cursor-pointer order-2 "
         >
-          {/* Down Icon SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 animate-bounce rounded-full p-1 hover:bg-blue-400 border border-blue-400 hover:text-white transition duration-300 ease-in-out order-1"
+            className="h-10 w-10 animate-bounce rounded-full p-1 text-white hover:bg-blue-400 border border-blue-400 hover:text-white transition duration-300 ease-in-out order-1"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -105,9 +84,8 @@ const Hero: React.FC<Props> = (props: Props) => {
           delay: 0.5,
         }}
       >
-        {/* Social Icons */}
         <ul className="absolute bottom-12 left-4 flex flex-col gap-4">
-          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-black">
+          <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 ">
             <Link
               href="https://github.com/Saurav-Pant"
               target="_blank"

@@ -2,7 +2,6 @@ import BackToTop from "./Components/BackToTop";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import "./globals.css";
-import ThemeProvider from "./Context/Theme";
 
 export const metadata = {
   title: "Saurav Pant | Portfolio",
@@ -17,12 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <ThemeProvider>
           <Navbar />
           {children}
           <BackToTop />
           <Footer />
-        </ThemeProvider>
       </body>
     </html>
   );

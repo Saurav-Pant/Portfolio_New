@@ -8,7 +8,7 @@ const Footer = () => {
         Developed with{" "}
         <span className="text-red-500">
           <FaHeart className="mx-1" />
-        </span>{" "}
+        </span>
         by 
         <span className="text-blue-500 mx-1">
         Saurav Pant
