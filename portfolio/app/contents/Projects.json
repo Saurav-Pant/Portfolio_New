@@ -38,5 +38,13 @@
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1695406492/CR_canva_pnwzsl.png",
     "githubUrl": "https://github.com/Saurav-Pant/CollegeReviewHub",
     "liveUrl": "https://college-review-hub2.vercel.app/"
+  },
+  {
+    "id": 6,
+    "name": "NotesWave",
+    "category": "All,FrontEnd",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1700644529/Notewave_official_uokdmz.png",
+    "githubUrl": "https://github.com/Saurav-Pant/NoteWave",
+    "liveUrl": "https://noteswave.vercel.app/"
   }
 ]
