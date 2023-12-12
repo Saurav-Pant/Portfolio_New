@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Expense Tracker",
-    "category": "All,MERN",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688004319/et4_razc9o.png",
-    "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
-    "liveUrl": "https://expense-tracker-saurav.netlify.app/"
+    "name": "NotesWave",
+    "category": "All,FrontEnd",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1700644529/Notewave_official_uokdmz.png",
+    "githubUrl": "https://github.com/Saurav-Pant/NoteWave",
+    "liveUrl": "https://notesswave.vercel.app/"
   },
   {
     "id": 2,
@@ -41,10 +41,14 @@
   },
   {
     "id": 6,
-    "name": "NotesWave",
-    "category": "All,FrontEnd",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1700644529/Notewave_official_uokdmz.png",
-    "githubUrl": "https://github.com/Saurav-Pant/NoteWave",
-    "liveUrl": "https://notesswave.vercel.app/"
+    "name": "Expense Tracker",
+    "category": "All,MERN",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688004319/et4_razc9o.png",
+    "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
+    "liveUrl": "https://expensetracker19.vercel.app/"
   }
 ]
+
+
+
+
