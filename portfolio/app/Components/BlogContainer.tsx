@@ -41,9 +41,9 @@ const BlogContainer = (props: Props) => {
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1"
+            className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1 lg:mx-10"
           >
-            <div className="relative h-56 w-72 bg-cover bg-center">
+            <div className="relative h-56 w-80 bg-cover bg-center">
               <Image
                 src={blog.img}
                 alt="blog"
