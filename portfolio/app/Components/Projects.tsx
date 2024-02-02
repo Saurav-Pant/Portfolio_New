@@ -1,20 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Heading2 } from "./Heading_Text";
 import Image from "next/image";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import Link from "next/link";
-import landing from "../Assets/landing_logo.png";
-import frontend from "../Assets/frontend_logo.png";
-import backend from "../Assets/backend_logo.png";
-import all from "../Assets/all_logo.png";
-import web3 from "../Assets/web3.png";
 import { motion } from "framer-motion";
 
 type Project = {
   id: number;
   name: string;
-  category: string;
   image: string;
   githubUrl: string;
   liveUrl: string;
@@ -23,124 +17,12 @@ type Project = {
 type Props = {};
 
 const Projects = (props: Props) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [hoveredCategory, setHoveredCategory] = useState("");
-
   const projects: Project[] = require("../contents/Projects.json");
-
-  const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const handleCategoryHover = (category: string) => {
-    setHoveredCategory(category);
-  };
-
-  const categories = [
-    {
-      id: 1,
-      name: "All",
-    },
-    {
-      id: 2,
-      name: "LandingPage",
-    },
-    {
-      id: 3,
-      name: "FrontEnd",
-    },
-    {
-      id: 4,
-      name: "MERN",
-    },
-    {
-      id: 5,
-      name: "Web3",
-    },
-  ];
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) =>
-          project.category.includes(selectedCategory)
-        );
 
   return (
     <div id="projects" className="min-h-screen px-16 pt-24 overflow-y-hidden">
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2 className="">Projects</Heading2>
-      </div>
-      <div className="flex flex-row justify-center py-10 flex-wrap gap-6">
-        {categories.map((category) => (
-          <motion.button
-            key={category.id}
-            className={`relative border-2 border-blue-400 px-2 py-2 rounded-md ${
-              selectedCategory === category.name ? "bg-blue-300 text-white" : ""
-            }`}
-            onClick={() => handleCategoryClick(category.name)}
-            onMouseEnter={() => handleCategoryHover(category.name)}
-            onMouseLeave={() => handleCategoryHover("")}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          >
-            {category.name === "LandingPage" && (
-              <div className="inline-block w-4 h-4 mr-1">
-                <Image
-                  src={landing}
-                  alt="backend icon"
-                  width={16}
-                  height={16}
-                  title="LandingPage"
-                />
-              </div>
-            )}
-            {category.name === "All" && (
-              <div className="inline-block w-4 h-4 mr-1">
-                <Image src={all} alt="all icon" width={16} height={16} />
-              </div>
-            )}
-            {category.name === "FrontEnd" && (
-              <div className="inline-block w-4 h-4 mr-1">
-                <Image
-                  src={frontend}
-                  alt="FrontEnd icon"
-                  width={16}
-                  height={16}
-                />
-              </div>
-            )}
-            {category.name === "MERN" && (
-              <div className="inline-block w-4 h-4 mr-1">
-                <Image
-                  src={backend}
-                  alt="backend icon"
-                  width={16}
-                  height={16}
-                  color="red"
-                />
-              </div>
-            )}
-            {category.name === "Web3" && (
-              <div className="inline-block w-4 h-4 mr-1">
-                <Image
-                  src={web3}
-                  alt="Landing Icon"
-                  layout="fixed"
-                  width={16}
-                  height={16}
-                />
-              </div>
-            )}
-            {hoveredCategory === category.name && (
-              <div className="opacity-100 absolute bg-blue-500 text-white top-full left-1/2 -translate-x-1/2 translate-y-1/2 px-2 py-1 rounded-md shadow-lg transition duration-300 ease-in-out">
-                {category.name}
-              </div>
-            )}
-          </motion.button>
-        ))}
       </div>
       <motion.div
         className="flex flex-wrap justify-center items-center mt-28"
@@ -152,7 +34,7 @@ const Projects = (props: Props) => {
           ease: "easeInOut",
         }}
       >
-        {filteredProjects.length === 0 ? (
+        {projects.length === 0 ? (
           <div
             className="flex justify-center items-center text-center mt-10 animate-bounce 
           text-2xl font-bold text-blue-500"
@@ -160,7 +42,7 @@ const Projects = (props: Props) => {
             No projects found
           </div>
         ) : (
-          filteredProjects.map((project) => (
+          projects.map((project) => (
             <motion.div
               key={project.id}
               className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"

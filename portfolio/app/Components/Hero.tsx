@@ -12,8 +12,7 @@ interface Props {}
 const Hero: React.FC<Props> = (props: Props) => {
   return (
     <div
-      className="h-[90vh] bg-cover bg-center relative 
-          bg-black"
+      className="h-[90vh] bg-cover bg-center relative bg-black"
       id="Hero_Section"
     >
       <StarsCanvas />
@@ -96,7 +95,7 @@ const Hero: React.FC<Props> = (props: Props) => {
           </li>
           <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600">
             <Link
-              href="https://twitter.com/"
+              href="https://twitter.com/Saurav_Pant_"
               target="_blank"
               rel="noopener noreferrer"
             >

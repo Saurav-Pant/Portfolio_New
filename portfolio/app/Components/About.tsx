@@ -13,9 +13,13 @@ import {
   SiGithub,
   SiReact,
   SiNextdotjs,
+  SiAppwrite,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
+  SiMysql,
+  SiPrisma,
+  SiDocker,
 } from "react-icons/si";
 
 import { DiJavascript1 } from "react-icons/di";
@@ -60,24 +64,45 @@ const skills = [
     icon: SiNextdotjs,
   },
   {
-    id: 8,
+    id: 7,
+    name: "AppWrite",
+    icon: SiAppwrite,
+  },
+  {
+    id: 9,
     name: "TypeScript",
     icon: TbBrandTypescript,
   },
   {
-    id: 9,
+    id: 10,
     name: "Node.js",
     icon: SiNodedotjs,
   },
   {
-    id: 10,
+    id: 11,
     name: "Express",
     icon: SiExpress,
   },
   {
-    id: 11,
+    id: 12,
     name: "MongoDB",
     icon: SiMongodb,
+  },
+  {
+    id: 13,
+    name: "MySql",
+    icon: SiMysql,
+  },
+  {
+    id: 14,
+    name: "Prisma",
+    icon: SiPrisma,
+  },
+
+  {
+    id: 15,
+    name: "Docker",
+    icon: SiDocker,
   },
 ];
 
@@ -85,7 +110,7 @@ const About = (props: Props) => {
   return (
     <Element name="about" className="section">
       <div
-        className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-20 overflow-x-hidden px-10"
+        className="flex flex-col md:flex-row min-h-[85vh] pl-4 sm:px-5 md:pl-20 pt-20 overflow-x-hidden overflow-hidden px-10"
         id="about"
       >
         <div className="flex flex-col justify-center items-start text-left md:w-1/2">
@@ -100,13 +125,13 @@ const About = (props: Props) => {
             }}
           >
             <h1 className="text-2xl font-bold pt-5">
-              Full Stack Web Developer | Specializing in
+              Full Stack Web Developer | Some Specialization in
               <span
                 className="
           bg-gradient-to-tr from-primary to-secondary text-transparent
            bg-clip-text pl-2"
               >
-                MERN
+                DevOps
               </span>
             </h1>
 
@@ -136,7 +161,7 @@ const About = (props: Props) => {
           </motion.div>
         </div>
 
-        <div className="flex justify-center items-center md:w-1/2 sm:py-8 py-10">
+        {/* <div className="flex justify-center items-center md:w-1/2 sm:py-8 py-10">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-blue-400 opacity-75 rounded-lg z-0"></div>
             <div className="relative z-10">
@@ -149,7 +174,7 @@ const About = (props: Props) => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Element>
   );
