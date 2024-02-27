@@ -64,7 +64,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
     <div>
       <nav
         ref={navbarRef}
-        className="flex items-center justify-between flex-wrap p-4 bg-gradient-to-r from-black via-gray-700 to-gray-900 fixed w-full z-50 top-0 shadow-md"
+        className="flex items-center justify-between flex-wrap p-4 bg-black fixed w-full z-50 top-0 shadow-md"
       >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl tracking-tight pl-6">
