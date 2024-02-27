@@ -12,6 +12,7 @@ type Project = {
   image: string;
   githubUrl: string;
   liveUrl: string;
+  stack: string[];
 };
 
 type Props = {};
@@ -47,7 +48,7 @@ const Projects = (props: Props) => {
               key={project.id}
               className="flex flex-col justify-center items-center m-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
               whileHover={{
-                boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.5)", // Border effect on hover
+                boxShadow: "0 0 0 3px rgba(59, 130, 246, 0.5)",
               }}
             >
               <div className="relative h-56 w-72">
@@ -85,6 +86,17 @@ const Projects = (props: Props) => {
                     </button>
                   </li>
                 </div>
+              </div>
+
+              <div className="flex justify-center items-center w-full bg-gray-100 py-3 rounded-md">
+                {project.stack.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="bg-blue-200 px-3 py-1 rounded-md text-sm mr-2 shadow-md cursor-pointer"
+                  >
+                    {tech}
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))

@@ -136,13 +136,15 @@ const About = (props: Props) => {
             </h1>
 
             <p className="pt-5 font-medium space-x-1">
-              Hi, I'm Saurav Pant, an experienced full stack web developer with
-              2+ years of expertise. I specialize in MERN stack development,
-              leveraging MongoDB, Express.js, React, and Node.js. I excel in
-              creating scalable web applications, integrating APIs, and ensuring
-              top-notch performance. With a problem-solving mindset and a keen
-              eye for detail, I deliver exceptional user experiences.
+              "I'm Saurav. I enjoy building websites that people love to use. I
+              use ReactJS, NextJS, and TypeScript for the front end, and Node.js
+              and Express for the back end. I manage data with MongoDB,
+              Appwrite, and Prisma ORM. I'm also into DevOps, using tools like
+              GitHub Actions, CI/CD pipelines, and Docker to make deploying apps
+              easier. My goal is to create websites with great features that run
+              smoothly."
             </p>
+
             <div className="flex items-center justify-center py-5 space-x-6 sm:py-7">
               <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-5">
                 {skills.map((skill) => {

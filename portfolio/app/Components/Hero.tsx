@@ -1,15 +1,21 @@
-"use client";
+"use client"
 import React from "react";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaLinkedin, FaArrowDown } from "react-icons/fa";
 import Link from "next/link";
-import { HeadingText } from "./Heading_Text";
 import { motion } from "framer-motion";
-import { Link as ScrollLink } from "react-scroll";
 import StarsCanvas from "./StarBackground";
+import {Button} from "../Components/ui/moving-border";
 
 interface Props {}
 
 const Hero: React.FC<Props> = (props: Props) => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       className="h-[90vh] bg-cover bg-center relative bg-black"
@@ -28,45 +34,30 @@ const Hero: React.FC<Props> = (props: Props) => {
         }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        <HeadingText>Saurav Pant</HeadingText>
-        <p className="">
-          <span className="text-xl bg-gradient-to-r from-sky-200 to-blue-500 bg-clip-text text-transparent">
-            Full Stack Developer
-          </span>
-        </p>
-      </motion.div>
-      {/* Down Icon */}
-      <motion.div
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4 "
-        initial={{
-          opacity: 0,
-          y: 130,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{ duration: 0.9, delay: 0.5 }}
-      >
-        <ScrollLink
-          to="about"
-          smooth={true}
-          duration={500}
-          className="text-black hover:text-blue-500 cursor-pointer order-2 "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 animate-bounce rounded-full p-1 text-white hover:bg-blue-400 border border-blue-400 hover:text-white transition duration-300 ease-in-out order-1"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 3a.5.5 0 01.5.5v9.793l3.146-3.147a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708L9.5 13.293V3.5A.5.5 0 0110 3z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </ScrollLink>
+        <div className="flex flex-col items-center justify-center text-white">
+          <div className="relative mb-5">
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            >
+              Open For Freelance | Internship
+            </Button>
+          </div>
+
+          <div className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-4 text-center">
+            <span
+              className="bg-gradient-to-tl from-slate-200 via-gray-400 to-white text-transparent bg-clip-text "
+              style={{ WebkitBackgroundClip: "text" }}
+            >
+              Hi, I'm Saurav <br />{" "}
+              <span className="">A Full Stack Developer</span>
+            </span>
+          </div>
+          <div className="text-sm lg:text-xl opacity-75 text-center lg:mt-10 w-2/3 font-medium">
+            I build Smooth and Scalable Web applications which People love to
+            use with User Friendly Designs
+          </div>
+        </div>
       </motion.div>
 
       <motion.div
@@ -112,6 +103,22 @@ const Hero: React.FC<Props> = (props: Props) => {
             </Link>
           </li>
         </ul>
+      </motion.div>
+
+      {/* Scroll to bottom icon */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        animate={{ y: [0, -5, 0], opacity: [1, 0.5, 1] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+        onClick={scrollToBottom}
+      >
+        <motion.div
+          className="bg-white rounded-full p-1"
+          animate={{ y: [0, -5, 0], opacity: [1, 0.5, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
+          <FaArrowDown className="w-5 h-5 lg:w-7 lg:h-7 text-black" />
+        </motion.div>
       </motion.div>
     </div>
   );
