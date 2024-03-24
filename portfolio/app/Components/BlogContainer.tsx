@@ -16,12 +16,11 @@ type Blog = {
   category: string;
 };
 
-
 const BlogContainer = (props: Props) => {
   const blogs: Blog[] = require("../contents/Blogs.json");
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 relative bg-gradient-to-br from-black to-gray-900">
       <StarsCanvas />
       <span className="flex flex-col justify-center items-start text-left md:w-1/2 pl-10">
         <Heading2>Blogs</Heading2>
@@ -39,17 +38,20 @@ const BlogContainer = (props: Props) => {
         }}
       >
         {blogs.map((blog) => (
-          <div
+          <motion.div
             key={blog.id}
-            className="flex flex-col justify-center items-center m-4 bg-white rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1 lg:mx-10"
+            className="flex flex-col justify-center items-center m-4 rounded-md bg-gradient-to-br from-black to-gray-900 border border-gray-700 p-4 backdrop-blur-md backdrop-filter bg-opacity-30 hover:bg-opacity-50 shadow-md hover:shadow-lg transition duration-300 ease-in-out overflow-hidden lg:mx-10"
+            whileHover={{
+              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+            }}
           >
-            <div className="relative h-56 w-80 bg-cover bg-center">
+            <div className="relative h-56 w-80 rounded-md overflow-hidden">
               <Image
                 src={blog.img}
                 alt="blog"
-                className="rounded-t-md"
                 layout="fill"
                 objectFit="cover"
+                className="rounded-t-md"
               />
             </div>
             <div className="p-4 text-sky-500">
@@ -62,12 +64,13 @@ const BlogContainer = (props: Props) => {
                   href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-blue-700"
                 >
                   {blog.title}
                 </Link>
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>
