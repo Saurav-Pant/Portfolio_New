@@ -78,7 +78,7 @@ const ProjectCard = (props: Props) => {
             {project.stack.map((tech, index) => (
               <div
                 key={index}
-                className="bg-blue-600 px-3 py-1 rounded-md text-sm mr-2 shadow-md cursor-pointer"
+                className="bg-sky-300 px-3 py-1 rounded-md text-sm mr-2 shadow-md cursor-pointer"
               >
                 {tech}
               </div>
