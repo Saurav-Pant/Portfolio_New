@@ -1,6 +1,7 @@
 import React from "react";
 import { Heading2 } from "./Heading_Text";
 import ProjectCard from "./ProjectCard";
+import Project3DCard from "./Project3DCard";
 
 type Project = {
   id: number;
@@ -19,7 +20,8 @@ const Projects = (props: Props) => {
       <div className="flex flex-col justify-center items-start text-left md:w-1/2">
         <Heading2 className="">Projects</Heading2>
       </div>
-      <ProjectCard />
+      {/* <ProjectCard/> */}
+      <Project3DCard/>
     </div>
   );
 };
