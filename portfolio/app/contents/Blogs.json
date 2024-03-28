@@ -1,51 +1,61 @@
 [
   {
     "id": 1,
-    "title": "Server Side vs Client Side Rendering",
+    "title": "Server vs Client Side Rendering",
     "link": "https://sauravblog.hashnode.dev/demystifying-client-side-server-side-rendering",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1687972899/rendering_szosaa.png",
-    "category": "Frontend,All"
+    "category": "Frontend,All",
+    "topic": ["NextJS", "Frontend"]
   },
   {
     "id": 2,
     "title": "Removing Navbar/Footer on Login ",
     "link": "https://sauravblog.hashnode.dev/removing-navbar-and-footer-on-loginregistration-page-a-cleaner-user-experience",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688035118/Removing_NavbarFooter_on_Login_jsjamf.png",
-    "category": "Frontend,All"
+    "category": "Frontend,All",
+    "topic": ["Frontend","ReactJS"]
+
   },
   {
     "id": 3,
-    "title": "A Guide to Open Source Collaboration",
+    "title": "Guide to Open Source",
     "link": "https://sauravblog.hashnode.dev/mastering-git-a-beginners-guide-to-open-source-collaboration",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688035189/Open_Source_1_yhajcf.png",
-    "category": "Open Source,All"
+    "category": "Open Source,All",
+    "topic": ["OpenSource"]
+
   },
   {
     "id": 4,
     "title": "Binary Search Algorithm",
     "link": "https://sauravblog.hashnode.dev/binary-search-algorithm",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688034962/Binary_Search_Algorithm_kanwr2.png",
-    "category": "Frontend,All"
+    "category": "Frontend,All",
+    "topic": ["DSA","Algorithm"]
+
   },
   {
     "id": 5,
     "title": "REST API Explained",
     "link": "https://www.showwcase.com/show/35786/demystifying-rest-api-a-beginners-guide",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688490445/Resi_API_2_ajfoqu.png",
-    "category": "Backend,All"
+    "category": "Backend,All",
+    "topic": ["Backend","ExpressJS"]
   },
   {
     "id": 6,
     "title": "CDN Explained",
     "link": "https://sauravblog.hashnode.dev/the-power-of-cdns-enhancing-speed-and-efficiency#heading-leveraging-caching-and-local-delivery",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688918186/CDN_EXPLAINED2_d3fgzz.png",
-    "category": "Backend,All"
+    "category": "Backend,All",
+    "topic": ["System Design"]
   },
   {
     "id": 7,
     "title": "NextJS 13 Mastery Series",
     "link": "https://sauravblog.hashnode.dev/series/nextjs-mastery",
     "img": "https://res.cloudinary.com/dju5vyekj/image/upload/v1711287962/Screenshot_from_2024-03-24_19-15-20_l5wygx.png",
-    "category": "All"
+    "category": "All",
+    "topic": ["NextJS Series"]
   }
 ]

@@ -81,7 +81,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
+              <FaGithub className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" />
             </Link>
           </li>
           <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-sky-600">
@@ -90,7 +90,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTwitter className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
+              <FaTwitter className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" />
             </Link>
           </li>
           <li className="transition-transform duration-200 ease-in-out transform hover:scale-125 text-gray-400 hover:text-blue-500">
@@ -99,7 +99,7 @@ const Hero: React.FC<Props> = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="w-6 h-6 md:w-8 md:h-8 lg:w-9 lg:h-9" />
+              <FaLinkedin className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" />
             </Link>
           </li>
         </ul>

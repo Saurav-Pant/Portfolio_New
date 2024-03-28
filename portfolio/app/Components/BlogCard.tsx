@@ -12,6 +12,7 @@ type Blog = {
   link: string;
   img: string;
   category: string;
+  topic: string[];
 };
 
 
