@@ -1,54 +1,72 @@
 [
   {
     "id": 1,
+    "name": "Blood Donation Project",
+    "category": "All,FullStack",
+    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
+    "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
+    "liveUrl": "https://blood-donation-project.vercel.app/",
+    "stack": ["NextJS","Prisma","Terraform","AWS"],
+    "desc": "Through this you can have access to people who are willing to donate blood in your location."
+  },
+  {
+    "id": 2,
+    "name": "Proposalify",
+    "category": "All,FrontEnd",
+    "image": "https://pub-96d3131e0e7248bf8295a83f682993ab.r2.dev/Products-Videos/Proposalify-Img.png",
+    "githubUrl": "https://github.com/Saurav-Pant/Proposalify",
+    "liveUrl": "https://proposalify.vercel.app/",
+    "stack": ["Tailwind","NextJS","Prisma","GenAI"],
+    "desc": "Here you can create your proposal and share it with others."
+  },
+  {
+    "id": 3,
+    "name": "Tweet Scrapper",
+    "category": "All,FullStack",
+    "image": "https://pub-96d3131e0e7248bf8295a83f682993ab.r2.dev/Products-Videos/Tweeter-Scrapper.png",
+    "githubUrl": "https://github.com/Saurav-Pant/Tweet-Scrapper",
+    "liveUrl": "https://github.com/Saurav-Pant/Tweet-Scrapper",
+    "stack": ["NextJS","Python","Selenium"],
+    "desc": "Here you can scrape the tweets of any user."
+  },
+  {
+    "id": 4,
     "name": "NotesWave",
     "category": "All,FrontEnd",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1700644529/Notewave_official_uokdmz.png",
     "githubUrl": "https://github.com/Saurav-Pant/NoteWave",
     "liveUrl": "https://notesswave.vercel.app/",
     "stack": ["Tailwind","NextJS", "Prisma"],
-    "desc":"Here you can share your short notes with others and save them for future references"
+    "desc": "Here you can share your short notes with others and save them for future references."
   },
   {
-    "id": 2,
+    "id": 5,
     "name": "Code Beautify",
     "category": "All,FrontEnd",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1706860615/Screenshot_from_2024-02-02_13-26-46_l0cdmp.png",
     "githubUrl": "https://github.com/Saurav-Pant/Code-Beautify",
     "liveUrl": "https://code-beautified.vercel.app/",
     "stack": ["Tailwind","NextJS"],
-    "desc":"Here you can enhance your code snippet and easily make them visually appealing"
+    "desc": "Here you can enhance your code snippet and easily make them visually appealing."
   },
   {
-    "id": 3,
-    "name": "Blood Donation Project",
-    "category": "All,FullStack",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688003037/blood_portfolio_mz6y2t.png",
-    "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
-    "liveUrl": "https://blood-donation-project.vercel.app/",
-    "stack": ["Tailwind","MERN"],
-    "desc":"Through this you can have a access of peoples who are willing to Donate blood in your location"
-
-  },
-  {
-    "id": 4,
+    "id": 6,
     "name": "College Review Hub",
     "category": "All,FrontEnd",
     "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1695406492/CR_canva_pnwzsl.png",
     "githubUrl": "https://github.com/Saurav-Pant/CollegeReviewHub",
     "liveUrl": "https://college-review-hub.vercel.app/",
-    "stack": ["Tailwind","NextJS", "Prisma"],
-    "desc":"Here you can share about your college which help other students about the college"
+    "stack": ["NextJS", "Prisma"],
+    "desc": "Here you can share about your college, helping other students learn about it."
   },
   {
-    "id": 5,
-    "name": "Expense Tracker",
+    "id":7,
+    "name": "Task Manager",
     "category": "All,FullStack",
-    "image": "https://res.cloudinary.com/dju5vyekj/image/upload/v1688004319/et4_razc9o.png",
-    "githubUrl": "https://github.com/Saurav-Pant/Expense-Tracker",
-    "liveUrl": "https://expensetracker19.vercel.app/",
-    "stack": ["Vanilla CSS","MERN"],
-    "desc":"Through this you can manage your money and can note the expenditures on daily basis"
-
+    "image": "https://pub-96d3131e0e7248bf8295a83f682993ab.r2.dev/Products-Videos/Task-Mgmt.png",
+    "githubUrl":"https://github.com/Saurav-Pant/Task-Mgmt",
+    "liveUrl":"https://task-mgmt-appn.vercel.app/Login",
+    "stack":["MongoDB","ReactJS", "ExpereesJS","Prisma"],
+    "desc":"Here you can manage your tasks and keep track of them."
   }
 ]
